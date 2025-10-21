@@ -1,0 +1,3 @@
+INSERT INTO `yx_contestaward` VALUES (2829, 18991, 10000146, 0);
+INSERT INTO `yx_contestaward` VALUES (8552, 28781, 10000146, 0);
+INSERT INTO `yx_contestaward` VALUES (7637, 19353, 10000141, 0);
