@@ -1,3 +1,37 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : hello
+ Source Server Type    : MySQL
+ Source Server Version : 32336
+ Source Host           : 192.168.171.128:3306
+ Source Schema         : hlyx
+
+ Target Server Type    : MySQL
+ Target Server Version : 32336
+ File Encoding         : 65001
+
+ Date: 21/10/2025 18:56:40
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for yx_event
+-- ----------------------------
+DROP TABLE IF EXISTS `yx_event`;
+CREATE TABLE `yx_event`  (
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  `type` int(4) NULL DEFAULT NULL,
+  `data` int(4) NULL DEFAULT NULL,
+  `param` varchar(128) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE = MyISAM AUTO_INCREMENT = 50003 ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of yx_event
+-- ----------------------------
 INSERT INTO `yx_event` VALUES (0009, 1, 2113, '');
 INSERT INTO `yx_event` VALUES (0010, 1, 2115, '');
 INSERT INTO `yx_event` VALUES (0001, 1, 2080, '');
@@ -32,3 +66,5 @@ INSERT INTO `yx_event` VALUES (2000, 1, 50000270, '');
 INSERT INTO `yx_event` VALUES (2551, 1, 156001, '');
 INSERT INTO `yx_event` VALUES (50001, 1, 88216, '');
 INSERT INTO `yx_event` VALUES (50002, 1, 88244, '');
+
+SET FOREIGN_KEY_CHECKS = 1;

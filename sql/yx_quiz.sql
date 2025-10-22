@@ -1,3 +1,44 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : hello
+ Source Server Type    : MySQL
+ Source Server Version : 32336
+ Source Host           : 192.168.171.128:3306
+ Source Schema         : hlyx
+
+ Target Server Type    : MySQL
+ Target Server Version : 32336
+ File Encoding         : 65001
+
+ Date: 21/10/2025 18:58:38
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for yx_quiz
+-- ----------------------------
+DROP TABLE IF EXISTS `yx_quiz`;
+CREATE TABLE `yx_quiz`  (
+  `id` int(4) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type` int(4) NOT NULL DEFAULT 0,
+  `level` int(4) NOT NULL DEFAULT 0,
+  `question` varchar(255) NULL DEFAULT NULL,
+  `answer0` varchar(31) NULL DEFAULT NULL,
+  `answer1` varchar(31) NULL DEFAULT NULL,
+  `answer2` varchar(31) NULL DEFAULT NULL,
+  `answer3` varchar(31) NULL DEFAULT NULL,
+  `result` int(4) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `level`(`level`),
+  INDEX `type`(`type`)
+) ENGINE = MyISAM AUTO_INCREMENT = 5471 ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of yx_quiz
+-- ----------------------------
 INSERT INTO `yx_quiz` VALUES (1, 0, 0, '六一节（猜一个字）', 'A.靖', 'B.竦', 'C.瞳', 'D.憧', 2);
 INSERT INTO `yx_quiz` VALUES (2, 0, 0, '童心（猜一个字）', 'A.田', 'B.日', 'C.意', 'D.章', 0);
 INSERT INTO `yx_quiz` VALUES (4, 0, 0, '断桥残雪入眼前（猜一个字）', 'A.霖', 'B.霜', 'C.露', 'D.霰', 1);

@@ -1,1 +1,129 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : hello
+ Source Server Type    : MySQL
+ Source Server Version : 32336
+ Source Host           : 192.168.171.128:3306
+ Source Schema         : hlyx
+
+ Target Server Type    : MySQL
+ Target Server Version : 32336
+ File Encoding         : 65001
+
+ Date: 21/10/2025 18:58:22
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for yx_playermap
+-- ----------------------------
+DROP TABLE IF EXISTS `yx_playermap`;
+CREATE TABLE `yx_playermap`  (
+  `id` int(4) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` char(15) NULL DEFAULT '未命名',
+  `describe_text` char(127) NULL DEFAULT '',
+  `mapdoc` int(4) UNSIGNED NOT NULL DEFAULT 0,
+  `type` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `max_monster` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `monster_type0` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `monster_type1` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `monster_level0` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `monster_level1` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `org_monster_rate` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `award0` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `award1` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `area0_x` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `area0_y` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `area0_range` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `monster0_area0` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `monsterlev0_area0` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `monster1_area0` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `monsterlev1_area0` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `org_rate_area0` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `area0_award0` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `area0_award1` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `area1_x` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `area1_y` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `area1_range` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `monster0_area1` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `monsterlev0_area1` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `monster1_area1` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `monsterlev1_area1` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `org_rate_area1` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `area1_award0` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `area1_award1` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `weather` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `bgmusic` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `bgmusic_show` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `fightmusic` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passwaytype_count` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway0_mapid` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway0_mapdoc` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway0_mapportal` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway1_mapid` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway1_mapdoc` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway1_mapportal` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway2_mapid` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway2_mapdoc` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway2_mapportal` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway3_mapid` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway3_mapdoc` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway3_mapportal` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway4_mapid` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway4_mapdoc` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway4_mapportal` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway5_mapid` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway5_mapdoc` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway5_mapportal` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway6_mapid` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway6_mapdoc` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway6_mapportal` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway7_mapid` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway7_mapdoc` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway7_mapportal` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway8_mapid` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway8_mapdoc` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway8_mapportal` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway9_mapid` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway9_mapdoc` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `passway9_mapportal` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal_count` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal0_x` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal0_y` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal1_x` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal1_y` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal2_x` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal2_y` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal3_x` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal3_y` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal4_x` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal4_y` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal5_x` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal5_y` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal6_x` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal6_y` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal7_x` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal7_y` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal8_x` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal8_y` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal9_x` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `portal9_y` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `office_map_id` int(4) UNSIGNED NULL DEFAULT 0,
+  `office_map_x` int(4) UNSIGNED NULL DEFAULT 0,
+  `office_map_y` int(4) UNSIGNED NULL DEFAULT 0,
+  `owner_id` int(4) UNSIGNED NULL DEFAULT 0,
+  `idxserver` int(4) NULL DEFAULT -1,
+  `exp` int(4) UNSIGNED NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  INDEX `office_map_id`(`office_map_id`, `idxserver`, `owner_id`)
+) ENGINE = MyISAM AUTO_INCREMENT = 1000001 ROW_FORMAT = Fixed;
+
+-- ----------------------------
+-- Records of yx_playermap
+-- ----------------------------
 INSERT INTO `yx_playermap` VALUES (1000000, '系统保留', '系统保留1000000的ID不能装入', 0, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0, 0, 0, 0, -1, 10000);
+
+SET FOREIGN_KEY_CHECKS = 1;

@@ -1,3 +1,65 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : hello
+ Source Server Type    : MySQL
+ Source Server Version : 32336
+ Source Host           : 192.168.171.128:3306
+ Source Schema         : hlyx
+
+ Target Server Type    : MySQL
+ Target Server Version : 32336
+ File Encoding         : 65001
+
+ Date: 21/10/2025 18:57:27
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for yx_npc
+-- ----------------------------
+DROP TABLE IF EXISTS `yx_npc`;
+CREATE TABLE `yx_npc`  (
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `name` char(15) NULL DEFAULT '未命名',
+  `type` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `look` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `idmap` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `cellx` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `celly` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `jobtrinum` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `job0` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `job1` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `job2` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `job3` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `job4` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `job5` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `job6` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `job7` int(4) UNSIGNED ZEROFILL NULL DEFAULT NULL,
+  `face` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `idxserver` int(4) NULL DEFAULT -1,
+  `owner_id` int(4) UNSIGNED NULL DEFAULT 0,
+  `data0` int(4) NOT NULL DEFAULT 0,
+  `data1` int(4) NOT NULL DEFAULT 0,
+  `data2` int(4) NOT NULL DEFAULT 0,
+  `data3` int(4) NOT NULL DEFAULT 0,
+  `hue0` tinyint(4) UNSIGNED NOT NULL DEFAULT 0,
+  `saturation0` tinyint(4) NOT NULL DEFAULT 0,
+  `bright0` tinyint(4) NOT NULL DEFAULT 0,
+  `hue1` tinyint(4) UNSIGNED NOT NULL DEFAULT 0,
+  `saturation1` tinyint(4) NOT NULL DEFAULT 0,
+  `bright1` tinyint(4) NOT NULL DEFAULT 0,
+  `hue2` tinyint(4) UNSIGNED NOT NULL DEFAULT 0,
+  `saturation2` tinyint(4) NOT NULL DEFAULT 0,
+  `bright2` tinyint(4) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE = MyISAM ROW_FORMAT = Fixed;
+
+-- ----------------------------
+-- Records of yx_npc
+-- ----------------------------
 INSERT INTO `yx_npc` VALUES (0018, '贺捕头', 0000, 2307, 100001, 0101, 0088, 0004, 3175, 0081, 0045, 0078, 0000, 0000, 0000, 0000, 0230, -1, 0, 0, 0, 0, 0, 40, 44, 32, 42, 12, 22, 11, 4, 13);
 INSERT INTO `yx_npc` VALUES (0019, '蔡参将', 0000, 2807, 100001, 0031, 0088, 0003, 3205, 0080, 0046, 0000, 0000, 0000, 0000, 0000, 0280, -1, 0, 0, 0, 0, 0, 103, 15, 21, 23, 21, 28, 23, 9, 20);
 INSERT INTO `yx_npc` VALUES (0539, '周梦银', 0000, 3907, 310004, 0040, 0061, 0004, 3270, 1587, 1585, 1580, 0000, 0000, 0000, 0000, 0390, -1, 0, 0, 0, 0, 0, 91, 16, 38, 28, 7, 45, 133, 10, 47);
@@ -1567,3 +1629,5 @@ INSERT INTO `yx_npc` VALUES (16088, '红利天关', 0000, 2807, 100001, 0048, 00
 INSERT INTO `yx_npc` VALUES (16089, '红利礼官', 0000, 10141, 160099, 0037, 0024, 0001, 88631, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0827, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 INSERT INTO `yx_npc` VALUES (30090, '车夫', 0000, 13050, 200099, 0013, 0035, 0001, 87747, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0827, -1, 0, 0, 0, 0, 0, 30, 60, 60, 30, 60, 60, 30, 60, 60);
 INSERT INTO `yx_npc` VALUES (30091, 'PK入场', 0000, 10160, 100001, 0073, 0049, 0001, 87753, 0000, 0000, 0000, 0000, 0000, 0000, 0000, 0827, -1, 0, 0, 0, 0, 0, 30, 60, 60, 30, 60, 60, 30, 60, 60);
+
+SET FOREIGN_KEY_CHECKS = 1;

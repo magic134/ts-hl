@@ -1,3 +1,56 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : hello
+ Source Server Type    : MySQL
+ Source Server Version : 32336
+ Source Host           : 192.168.171.128:3306
+ Source Schema         : hlyx
+
+ Target Server Type    : MySQL
+ Target Server Version : 32336
+ File Encoding         : 65001
+
+ Date: 21/10/2025 18:56:15
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for yx_assembly
+-- ----------------------------
+DROP TABLE IF EXISTS `yx_assembly`;
+CREATE TABLE `yx_assembly`  (
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  `part0` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `param0` char(128) NULL DEFAULT '',
+  `part1` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `param1` char(128) NULL DEFAULT '',
+  `part2` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `param2` char(128) NULL DEFAULT '',
+  `part3` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `param3` char(128) NULL DEFAULT '',
+  `part4` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `param4` char(128) NULL DEFAULT '',
+  `part5` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `param5` char(128) NULL DEFAULT '',
+  `part6` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `param6` char(128) NULL DEFAULT '',
+  `part7` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `param7` char(128) NULL DEFAULT '',
+  `index_main` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `product_type` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `product_data` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `map` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `exp` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `chance` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  PRIMARY KEY (`id`)
+) ENGINE = MyISAM AUTO_INCREMENT = 48 ROW_FORMAT = Fixed;
+
+-- ----------------------------
+-- Records of yx_assembly
+-- ----------------------------
 INSERT INTO `yx_assembly` VALUES (0001, 1238, '鸡蛋 ※一点点 700 0 0 0 0 0 2000', 1234, '', 1234, '', 1234, '', 1234, '', 1234, '', 1234, '', 1238, '面粉 ※一点点 700 0 0 0 0 0 2000', 0007, 1238, 30013, 0000, 0001, 0080);
 INSERT INTO `yx_assembly` VALUES (0002, 1238, '豆沙 ※一点点 700 0 0 0 0 0 2000', 1234, '', 1234, '', 1234, '', 1234, '', 1234, '', 1234, '', 1238, '面粉 ※一点点 700 0 0 0 0 0 2000', 0007, 1238, 30014, 0000, 0001, 0080);
 INSERT INTO `yx_assembly` VALUES (0003, 1234, '', 1234, '', 1238, '南瓜 ※南瓜老头 700 0 0 0 0 0 2000', 1238, '糖果 ※便利店 0700 0 0 0 0 0 2000', 1234, '', 1234, '', 1234, '', 1234, '', 0002, 1238, 210004, 0000, 0001, 0100);
@@ -40,3 +93,5 @@ INSERT INTO `yx_assembly` VALUES (0045, 1238, '※火灵丸 ※火使者 600 0 0
 INSERT INTO `yx_assembly` VALUES (0046, 1238, '※土灵丸 ※土使者 600 0 0 0 0 0 1000', 1234, '', 1234, '', 1234, '', 1234, '', 1234, '', 1234, '', 1238, '※土灵丸 ※土使者 600 0 0 0 0 0 1000', 0000, 1238, 100117, 0000, 0001, 0100);
 INSERT INTO `yx_assembly` VALUES (0005, 1234, '', 1234, '', 1234, '', 1238, '特制毒药 ※水系 600 0 0 0 0 0 2000', 1238, '加强飞镖 ※水系 500 0 0 0 0 0 2000', 1234, '', 1234, '', 1234, '', 0003, 1238, 350037, 0000, 0003, 0080);
 INSERT INTO `yx_assembly` VALUES (0047, 1238, '元宵 ※涵翠 600 0 0 0 0 0 0', 1238, '元宵 ※涵翠 600 0 0 0 0 0 0', 1238, '元宵 ※涵翠 600 0 0 0 0 0 0', 1238, '元宵 ※涵翠 600 0 0 0 0 0 0', 1234, '', 1234, '', 1234, '', 1238, '元宵 ※涵翠 600 0 0 0 0 0 0', 0002, 1238, 700062, 0000, 0000, 0100);
+
+SET FOREIGN_KEY_CHECKS = 1;

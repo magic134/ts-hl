@@ -1,3 +1,56 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : hello
+ Source Server Type    : MySQL
+ Source Server Version : 32336
+ Source Host           : 192.168.171.128:3306
+ Source Schema         : hlyx
+
+ Target Server Type    : MySQL
+ Target Server Version : 32336
+ File Encoding         : 65001
+
+ Date: 21/10/2025 18:57:21
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for yx_monster
+-- ----------------------------
+DROP TABLE IF EXISTS `yx_monster`;
+CREATE TABLE `yx_monster`  (
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  `name` char(16) NULL DEFAULT NULL,
+  `base_attack` double(6, 4) UNSIGNED ZEROFILL NULL DEFAULT 0.0000,
+  `base_defence` double(6, 4) UNSIGNED ZEROFILL NULL DEFAULT 0.0000,
+  `base_dexterity` double(6, 4) UNSIGNED ZEROFILL NULL DEFAULT 0.0000,
+  `base_life` double(6, 4) UNSIGNED ZEROFILL NULL DEFAULT 0.0000,
+  `grow_point` double(6, 4) UNSIGNED ZEROFILL NULL DEFAULT 0.0000,
+  `life_rise` double(6, 4) UNSIGNED ZEROFILL NULL DEFAULT 0.0000,
+  `attack_rate` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `defence_rate` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `dexterity_rate` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `look` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `class` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `index_num` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `hue0` tinyint(4) UNSIGNED NOT NULL DEFAULT 0,
+  `saturation0` tinyint(4) NOT NULL DEFAULT 0,
+  `bright0` tinyint(4) NOT NULL DEFAULT 0,
+  `hue1` tinyint(4) UNSIGNED NOT NULL DEFAULT 0,
+  `saturation1` tinyint(4) NOT NULL DEFAULT 0,
+  `bright1` tinyint(4) NOT NULL DEFAULT 0,
+  `hue2` tinyint(4) UNSIGNED NOT NULL DEFAULT 0,
+  `saturation2` tinyint(4) NOT NULL DEFAULT 0,
+  `bright2` tinyint(4) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE = MyISAM AUTO_INCREMENT = 86005 ROW_FORMAT = Fixed;
+
+-- ----------------------------
+-- Records of yx_monster
+-- ----------------------------
 INSERT INTO `yx_monster` VALUES (73013, '小妖', 5.4400, 4.8000, 5.7600, 32.0000, 3.8000, 2.9000, 0034, 0030, 0036, 0138, 73013, 0005, 107, 18, 46, 112, 37, 46, 111, 15, 50);
 INSERT INTO `yx_monster` VALUES (73012, '迷茫', 5.4400, 5.6000, 4.9600, 32.0000, 3.8000, 2.9000, 0034, 0035, 0031, 0137, 73012, 0004, 158, 29, 46, 142, 41, 46, 156, 28, 50);
 INSERT INTO `yx_monster` VALUES (73011, '迷惑', 6.2400, 4.8000, 4.9600, 32.0000, 3.8000, 2.9000, 0039, 0030, 0031, 0136, 73011, 0003, 9, 49, 46, 7, 56, 36, 8, 47, 50);
@@ -450,3 +503,5 @@ INSERT INTO `yx_monster` VALUES (32033, '宛冯', 12.5000, 6.7500, 5.7500, 62.00
 INSERT INTO `yx_monster` VALUES (20008, '莫邪', 7.0000, 3.7800, 3.2200, 31.0000, 3.3000, 3.1000, 0050, 0027, 0023, 0253, 20008, 0000, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 INSERT INTO `yx_monster` VALUES (21008, '合伯宝剑', 9.0000, 4.8600, 4.1400, 31.5000, 4.1000, 2.6000, 0050, 0027, 0023, 0253, 21008, 0000, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 INSERT INTO `yx_monster` VALUES (22008, '棠溪宝剑', 12.5000, 6.7500, 5.7500, 62.0000, 4.3000, 3.7000, 0050, 0027, 0023, 0253, 22008, 0000, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+SET FOREIGN_KEY_CHECKS = 1;

@@ -1,3 +1,39 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : hello
+ Source Server Type    : MySQL
+ Source Server Version : 32336
+ Source Host           : 192.168.171.128:3306
+ Source Schema         : hlyx
+
+ Target Server Type    : MySQL
+ Target Server Version : 32336
+ File Encoding         : 65001
+
+ Date: 21/10/2025 18:56:09
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for yx_action
+-- ----------------------------
+DROP TABLE IF EXISTS `yx_action`;
+CREATE TABLE `yx_action`  (
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `id_next` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `id_nextfail` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `type` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `data` int(4) NOT NULL DEFAULT 0,
+  `param` char(128) NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE = MyISAM ROW_FORMAT = Fixed;
+
+-- ----------------------------
+-- Records of yx_action
+-- ----------------------------
 INSERT INTO `yx_action` VALUES (0001, 0002, 0000, 0002, 0, '※佛珠 ※小云');
 INSERT INTO `yx_action` VALUES (0002, 0000, 0000, 0001, 198, '');
 INSERT INTO `yx_action` VALUES (0003, 0000, 0000, 0001, 199, '');
@@ -38462,3 +38498,5 @@ INSERT INTO `yx_action` VALUES (96997, 0000, 0000, 0000, 0, '');
 INSERT INTO `yx_action` VALUES (96998, 0000, 0000, 0000, 0, '');
 INSERT INTO `yx_action` VALUES (96999, 0000, 0000, 0000, 0, '');
 INSERT INTO `yx_action` VALUES (0000, 0000, 0000, 0000, 0, '');
+
+SET FOREIGN_KEY_CHECKS = 1;

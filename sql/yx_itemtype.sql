@@ -1,3 +1,53 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : hello
+ Source Server Type    : MySQL
+ Source Server Version : 32336
+ Source Host           : 192.168.171.128:3306
+ Source Schema         : hlyx
+
+ Target Server Type    : MySQL
+ Target Server Version : 32336
+ File Encoding         : 65001
+
+ Date: 21/10/2025 18:57:01
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for yx_itemtype
+-- ----------------------------
+DROP TABLE IF EXISTS `yx_itemtype`;
+CREATE TABLE `yx_itemtype`  (
+  `name` varchar(16) NULL DEFAULT NULL,
+  `id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  `cost` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `look` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `item_sort` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `level_required` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `life` int(4) NULL DEFAULT 0,
+  `power` int(4) NULL DEFAULT 0,
+  `attack` int(4) NULL DEFAULT 0,
+  `defence` int(4) NULL DEFAULT 0,
+  `dexterity` int(4) NULL DEFAULT 0,
+  `anti_poison` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `anti_freeze` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `anti_sleep` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `anti_chaos` int(4) UNSIGNED ZEROFILL NULL DEFAULT 0000,
+  `inventer_name` varchar(16) NULL DEFAULT NULL,
+  `id_action` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `exp` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `class` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  `sacrifice` int(4) UNSIGNED ZEROFILL NOT NULL DEFAULT 0000,
+  PRIMARY KEY (`id`)
+) ENGINE = MyISAM AUTO_INCREMENT = 8889001 ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of yx_itemtype
+-- ----------------------------
 INSERT INTO `yx_itemtype` VALUES ('手工蜡染毯', 1516, 20000, 0599, 0700, 0000, 0, 0, 0, 0, 0, 0000, 0000, 0000, 0000, '※家具店', 10820, 0000, 0000, 0000);
 INSERT INTO `yx_itemtype` VALUES ('杉木箱', 1515, 30000, 0599, 0700, 0000, 0, 0, 0, 0, 0, 0000, 0000, 0000, 0000, '※家具店', 10810, 0000, 0000, 0000);
 INSERT INTO `yx_itemtype` VALUES ('脸盆', 1514, 7000, 0599, 0700, 0000, 0, 0, 0, 0, 0, 0000, 0000, 0000, 0000, '※家具店', 10800, 0000, 0000, 0000);
@@ -1721,3 +1771,5 @@ INSERT INTO `yx_itemtype` VALUES ('极品丹凤钗', 888019, 0000, 0225, 0400, 1
 INSERT INTO `yx_itemtype` VALUES ('极品招鞋', 888020, 0000, 0375, 0200, 1000000, 0, 6085, -1995, -300, 6753, 0000, 0000, 0000, 0000, '※太古幻灵', 0000, 0000, 0000, 0000);
 INSERT INTO `yx_itemtype` VALUES ('极品标衣', 888021, 0000, 0356, 0100, 1000000, 4105, -5940, -70, 5367, 1680, 0000, 0000, 0000, 0000, '※太古幻灵', 0000, 0000, 0000, 0000);
 INSERT INTO `yx_itemtype` VALUES ('1万元宝包', 56000, 10000, 0611, 0700, 0000, 0, 0, 0, 0, 0, 0000, 0000, 0000, 0000, '※1万元宝包', 86900, 0000, 0000, 0000);
+
+SET FOREIGN_KEY_CHECKS = 1;
