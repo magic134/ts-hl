@@ -36,7 +36,7 @@ export class YxUserPet {
      * @param data 新增用户宠物数据（不含userid）
      * @returns 新增用户宠物数据的userid
      */
-    async createYxUserPet(data: Omit<YxUserPetData, 'userid'>): Promise<number> {
+    async createYxUserPet(data:YxUserPetData): Promise<number> {
         // 校验必填字段
         const requiredFields = ['userid'];
         const missingFields = requiredFields.filter(field => !(field in data));

@@ -56,7 +56,7 @@ export class YxTask {
      * @param data 新增任务数据（不含id）
      * @returns 新增任务的id
      */
-    async createYxTask(data: Omit<YxTaskData, 'taskid'>): Promise<number> {
+    async createYxTask(data:YxTaskData): Promise<number> {
         // 校验必填字段
         const requiredFields = ['taskid'];
         const missingFields = requiredFields.filter(field => !(field in data));

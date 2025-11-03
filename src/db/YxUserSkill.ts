@@ -46,7 +46,7 @@ export class YxUserSkill {
      * @param data 新增用户技能数据（不含userid）
      * @returns 新增用户技能数据的userid
      */
-    async createYxUserSkill(data: Omit<YxUserSkillData, 'userid'>): Promise<number> {
+    async createYxUserSkill(data: YxUserSkillData): Promise<number> {
         // 校验必填字段
         const requiredFields = ['userid'];
         const missingFields = requiredFields.filter(field => !(field in data));

@@ -34,6 +34,8 @@ import {
     BallCard, BallCardData,
     FwItem, FwItemData
 } from "./db";
+import { YxRegister2 } from "./service/YxRegister2";
+import yxGetUsers from "./service/YxGetUsers";
 
 
 // ------------------------------ 使用示例 ------------------------------
@@ -203,9 +205,72 @@ async function testAllModels() {
     }
 }
 
-// 执行测试
-console.log('=== 执行用户操作测试 ===');
-testYxUserOperate();
+// ------------------------------ YxRegister2 测试用例 ------------------------------
+async function testYxRegister2() {
+    try {
+        console.log('\n=== 开始测试 YxRegister2 ===');
+        const register2 = new YxRegister2();
+        
+        // 测试参数
+        const name1 = 'test_account_001';
+        const name2 = 'test_account_002';
+        const name3 = 'test_account_003';
+        const password = 'test123456';
+        const qq = '1234567890';
+        const nick_name = '测试昵称';
+        
+        console.log('测试参数:');
+        console.log(`  账户1: ${name1}`);
+        console.log(`  账户2: ${name2}`);
+        console.log(`  账户3: ${name3}`);
+        console.log(`  密码: ${password}`);
+        console.log(`  QQ号: ${qq}`);
+        console.log(`  昵称: ${nick_name}`);
+        console.log('');
+        
+        // 执行注册
+        const result = await register2.register2(name1, name2, name3, password, qq, nick_name);
+        
+        console.log('\n=== 注册结果 ===');
+        console.log(`QQ表记录ID: ${result.qqId}`);
+        console.log(`账户ID列表: ${result.accountIds.join(', ')}`);
+        console.log(`账户名称列表: ${result.accountNames.join(', ')}`);
+        console.log('=== 测试完成 ===\n');
+        
+        return result;
+    } catch (err) {
+        console.error('YxRegister2 测试失败:', (err as Error).message);
+        throw err;
+    }
+}
 
-console.log('\n=== 执行综合模型测试 ===');
-testAllModels();
+// ================== 根据 QQ 查询测试 ==================
+async function testGetByQQ() {
+    try {
+        console.log('\n=== 开始测试 YxGetUsers.getByQQ ===');
+        // 使用一个示例 QQ，你可以改为实际存在于 qq 表的值
+        const qq = '1234567890';
+        console.log(`查询 QQ: ${qq}`);
+        const rows = await yxGetUsers.getByQQ(qq);
+        console.log('查询结果:');
+        console.log(JSON.stringify(rows, null, 2));
+        console.log('=== 测试完成 ===\n');
+        return rows;
+    } catch (err) {
+        console.error('YxGetUsers 测试失败:', (err as Error).message);
+        throw err;
+    }
+}
+
+// 执行测试
+// console.log('=== 执行用户操作测试 ===');
+// testYxUserOperate();
+
+// console.log('\n=== 执行综合模型测试 ===');
+// testAllModels();
+
+// console.log('\n=== 执行 YxRegister2 测试 ===');
+// testYxRegister2();
+
+// 同时触发 QQ 查询测试（非阻塞）
+testGetByQQ();

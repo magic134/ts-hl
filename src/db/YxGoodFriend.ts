@@ -72,7 +72,7 @@ export class YxGoodFriend {
      * @param data 新增好友数据（不含userid）
      * @returns 新增好友数据的userid
      */
-    async createYxGoodFriend(data: Omit<YxGoodFriendData, 'userid'>): Promise<number> {
+    async createYxGoodFriend(data: YxGoodFriendData): Promise<number> {
         // 校验必填字段
         const requiredFields = ['userid'];
         const missingFields = requiredFields.filter(field => !(field in data));

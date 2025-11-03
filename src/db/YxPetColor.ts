@@ -38,7 +38,7 @@ export class YxPetColor {
      * @param data 新增宠物颜色数据（不含id_pet）
      * @returns 新增宠物颜色的id_pet
      */
-    async createYxPetColor(data: Omit<YxPetColorData, 'id_pet'>): Promise<number> {
+    async createYxPetColor(data: YxPetColorData): Promise<number> {
         // 校验必填字段
         const requiredFields = ['id_pet'];
         const missingFields = requiredFields.filter(field => !(field in data));

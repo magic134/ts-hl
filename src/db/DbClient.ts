@@ -130,5 +130,22 @@ export class DbClient {
         });
     }
 
+    /**
+     * 执行任意 SQL 查询并返回结果数组
+     * @param sql SQL 字符串
+     * @param params 可选参数数组
+     */
+    async query(sql: string, params?: any[]): Promise<any[]> {
+        return new Promise((resolve, reject) => {
+            this.connection.query(sql, params || [], (err, results) => {
+                if (err) {
+                    reject(new Error(`查询失败: ${err.message}`));
+                    return;
+                }
+                resolve(results as any[]);
+            });
+        });
+    }
+
 
 }

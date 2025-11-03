@@ -44,7 +44,7 @@ export class YxUserColor {
      * @param data 新增用户颜色数据（不含id_user）
      * @returns 新增用户颜色的id_user
      */
-    async createYxUserColor(data: Omit<YxUserColorData, 'id_user'>): Promise<number> {
+    async createYxUserColor(data: YxUserColorData): Promise<number> {
         // 校验必填字段
         const requiredFields = ['id_user'];
         const missingFields = requiredFields.filter(field => !(field in data));
