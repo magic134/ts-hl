@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n35_sccx" name="n35" xy="0,0" size="1920,1080" type="rect" lineSize="0" fillColor="#e5ffffff">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n1_sccx" name="title" xy="898,94" size="124,79" fontSize="60" color="#ff0000" align="center" vAlign="middle" text="提示">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </text>
+    <text id="n4_sccx" name="content" xy="260,290" size="1400,500" fontSize="80" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="内容">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </text>
+    <component id="n7_sccx" name="btn_ok" src="sccx6" fileName="components/ButtonSimple.xml" xy="502,884" size="358,131" group="n34_sccx">
+      <Button title="确定" titleColor="#000000" titleFontSize="60"/>
+    </component>
+    <component id="n33_sccx" name="btn_cancel" src="sccx6" fileName="components/ButtonSimple.xml" xy="1060,883" size="358,131" group="n34_sccx">
+      <Button title="取消" titleColor="#000000" titleFontSize="60"/>
+    </component>
+    <group id="n34_sccx" name="n34" xy="502,883" size="916,132" advanced="true" layout="hz" colGap="200" excludeInvisibles="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxQuizData {
     id: number;                             // 题目ID（主键）

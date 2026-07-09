@@ -1,5 +1,5 @@
 import { Account, AccountData } from "../db/Account";
-import { DbClient } from "../db/DbClient";
+import { DbClient } from "../dbClient/DbClient";
 import { YxPet, YxPetData } from "../db/YxPet";
 import { YxUser, YxUserData } from "../db/YxUser";
 

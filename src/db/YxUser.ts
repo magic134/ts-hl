@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 export class YxUserData {
     id: number;                             // 主键
     name: string = '名字';                  // 角色名

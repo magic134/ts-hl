@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="500,120" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n0_sccx" name="n0" xy="0,0" size="500,120" touchable="false" type="rect" lineSize="0" fillColor="#fff0f0f0" corner="40">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n4_sccx" name="n2" xy="0,0" size="250,120" fontSize="60" align="center" vAlign="middle" autoSize="none" singleLine="true" text="登录">
+      <relation target="" sidePair="left-left,right-right%"/>
+    </text>
+    <text id="n3_sccx" name="n3" xy="250,0" size="250,120" fontSize="60" align="center" vAlign="middle" autoSize="none" singleLine="true" text="注册">
+      <relation target="" sidePair="left-left%,right-right"/>
+    </text>
+    <graph id="n1_sccx" name="n4" xy="250,0" size="250,120" touchable="false" type="rect" lineSize="0" fillColor="#7ffafafa" corner="40">
+      <gearXY controller="button" pages="0,2" values="250,0|250,0" default="0,0" tween="true"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+  </displayList>
+  <Button mode="Check"/>
+</component>

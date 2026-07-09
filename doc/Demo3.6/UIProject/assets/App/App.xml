@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <movieclip id="n32_sccx" name="n32" src="sccx1" fileName="res/animation/青翼蝠.jta" xy="99,36" filter="color" filterData="0,0,0,0.36"/>
+    <component id="n30_sccx" name="btn_switch" src="sccx7" fileName="components/ButtonSwitch.xml" xy="710,80">
+      <relation target="" sidePair="center-center,top-top"/>
+      <Button controller="c1" page="1"/>
+    </component>
+    <text id="n1_sccx" name="n1" xy="302,280" size="184,79" group="n8_sccx" fontSize="60" text="账号："/>
+    <graph id="n3_sccx" name="n3" xy="563,270" size="680,100" group="n8_sccx" type="rect"/>
+    <text id="n2_sccx" name="login_name" xy="563,270" size="680,100" group="n8_sccx" fontSize="60" vAlign="middle" autoSize="none" singleLine="true" text="" input="true" prompt="[i][color=#999999]请输入账号[/color][/i]" maxLength="20"/>
+    <text id="n4_sccx" name="n4" xy="300,426" size="184,79" group="n8_sccx" fontSize="60" text="密码："/>
+    <graph id="n5_sccx" name="n5" xy="561,416" size="680,100" group="n8_sccx" type="rect"/>
+    <text id="n6_sccx" name="login_pwd" xy="561,416" size="680,100" group="n8_sccx" fontSize="60" vAlign="middle" autoSize="none" singleLine="true" text="" input="true" prompt="[i][color=#999999]请输入密码[/color][/i]" maxLength="20" password="true"/>
+    <component id="n7_sccx" name="btn_login" src="sccx6" fileName="components/ButtonSimple.xml" xy="674,635" size="358,131" group="n8_sccx">
+      <Button title="登录" titleColor="#000000" titleFontSize="60"/>
+    </component>
+    <group id="n8_sccx" name="group_login" xy="300,270" size="943,496" advanced="true">
+      <gearDisplay controller="c1" pages="0"/>
+      <gearXY controller="c1" pages="1" values="-1920,270" default="300,270" tween="true"/>
+      <relation target="" sidePair="center-center,top-top"/>
+    </group>
+    <text id="n9_sccx" name="n9" xy="1922,280" size="184,79" group="n16_sccx" fontSize="60" text="账号："/>
+    <graph id="n10_sccx" name="n10" xy="2183,270" size="680,100" group="n16_sccx" type="rect"/>
+    <text id="n11_sccx" name="reg_name" xy="2183,270" size="680,100" group="n16_sccx" fontSize="60" vAlign="middle" autoSize="none" singleLine="true" text="" input="true" prompt="[i][color=#999999]请输入账号[/color][/i]" maxLength="20"/>
+    <text id="n12_sccx" name="n12" xy="1920,426" size="184,79" group="n16_sccx" fontSize="60" text="密码："/>
+    <graph id="n13_sccx" name="n13" xy="2181,416" size="680,100" group="n16_sccx" type="rect"/>
+    <text id="n14_sccx" name="reg_pwd" xy="2181,416" size="680,100" group="n16_sccx" fontSize="60" vAlign="middle" autoSize="none" singleLine="true" text="" input="true" prompt="[i][color=#999999]请输入密码[/color][/i]" maxLength="20"/>
+    <text id="n23_sccx" name="n23" xy="1922,573" size="184,79" group="n16_sccx" fontSize="60" text="名字："/>
+    <graph id="n24_sccx" name="n24" xy="2183,563" size="680,100" group="n16_sccx" type="rect"/>
+    <text id="n25_sccx" name="reg_nick" xy="2183,563" size="680,100" group="n16_sccx" fontSize="60" vAlign="middle" autoSize="none" singleLine="true" text="" input="true" prompt="[i][color=#999999]请输入玩家的角色名字[/color][/i]" maxLength="20"/>
+    <text id="n26_sccx" name="n26" xy="1922,721" size="154,79" group="n16_sccx" fontSize="60" text="QQ："/>
+    <graph id="n27_sccx" name="n27" xy="2183,711" size="680,100" group="n16_sccx" type="rect"/>
+    <text id="n28_sccx" name="reg_qq" xy="2183,711" size="680,100" group="n16_sccx" fontSize="60" vAlign="middle" autoSize="none" singleLine="true" text="" input="true" prompt="[i][color=#999999]请输入QQ号[/color][/i]" maxLength="20"/>
+    <component id="n15_sccx" name="btn_register" src="sccx6" fileName="components/ButtonSimple.xml" xy="2913,476" size="358,131" group="n16_sccx">
+      <Button title="注册" titleFontSize="60"/>
+    </component>
+    <text id="n29_sccx" name="n29" xy="1921,829" size="1237,240" group="n16_sccx" fontSize="60" color="#ff0000" autoSize="none" text="每人只能注册3个账号，账号QQ必须一致&#xA;并且QQ号在群里，否则会自动禁用账号&#xA;如有问题请联系管理员"/>
+    <group id="n16_sccx" name="group_register" xy="1920,270" size="1351,799" advanced="true">
+      <gearDisplay controller="c1" pages="1"/>
+      <gearXY controller="c1" pages="1" values="300,270" default="1920,270" tween="true"/>
+      <relation target="" sidePair="center-center,top-top"/>
+    </group>
+  </displayList>
+</component>

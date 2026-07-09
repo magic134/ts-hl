@@ -1,5 +1,5 @@
 // 数据库客户端
-export { DbClient } from './DbClient';
+export { DbClient } from '../dbClient/DbClient';
 
 // 用户相关
 export { YxUser, YxUserData } from './YxUser';

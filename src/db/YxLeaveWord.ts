@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxLeaveWordData {
     id: number;                             // 留言ID（主键）

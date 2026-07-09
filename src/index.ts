@@ -1,4 +1,4 @@
-import { DbClient } from "./db/DbClient";
+import { DbClient } from "./dbClient/DbClient";
 import { 
     YxUser, YxUserData,
     YxPet, YxPetData,
@@ -36,6 +36,7 @@ import {
 } from "./db";
 import { YxRegister2 } from "./service/YxRegister2";
 import yxGetUsers from "./service/YxGetUsers";
+import yxGetItems  from "./service/YxGetItems";
 
 
 // ------------------------------ 使用示例 ------------------------------
@@ -261,10 +262,27 @@ async function testGetByQQ() {
         throw err;
     }
 }
+// ================== 根据 user_id 查询yx_item测试 ==================
+async function testGetItemByUserId() {
+    try {
+        console.log('\n=== 开始测试 yx_item.getItemByUserId ===');
+        // 使用一个示例 QQ，你可以改为实际存在于 qq 表的值
+        const user_id = 6;
+        console.log(`查询 user_id: ${user_id}`);
+        const rows = await yxGetItems.getItemByUserId(user_id);
+        console.log('查询结果:');
+        console.log(JSON.stringify(rows, null, 2));
+        console.log('=== 测试完成 ===\n');
+        return rows;
+    } catch (err) {
+        console.error('yx_item.getItemByUserId 测试失败:', (err as Error).message);
+        throw err;
+    }
+}
 
 // 执行测试
-// console.log('=== 执行用户操作测试 ===');
-// testYxUserOperate();
+console.log('=== 执行用户操作测试 ===');
+testYxUserOperate();
 
 // console.log('\n=== 执行综合模型测试 ===');
 // testAllModels();
@@ -272,5 +290,7 @@ async function testGetByQQ() {
 // console.log('\n=== 执行 YxRegister2 测试 ===');
 // testYxRegister2();
 
-// 同时触发 QQ 查询测试（非阻塞）
-testGetByQQ();
+// // 同时触发 QQ 查询测试（非阻塞）
+// testGetByQQ();
+// // 查询玩家身上的物品
+// testGetItemByUserId();

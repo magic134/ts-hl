@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxAssemblyData {
     id: number;                             // 组装ID（主键）

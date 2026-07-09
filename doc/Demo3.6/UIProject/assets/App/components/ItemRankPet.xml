@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,60" extention="Button">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <controller name="button" pages="2,up,3,down,4,over,5,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n45_w9h8" name="bg0" xy="0,0" size="100,60" group="n58_w9h8" type="rect" lineColor="#ffcccccc" fillColor="#fff9f9f9">
+      <gearColor controller="c1" pages="0,1" values="#f9f9f9|#f5faff"/>
+      <relation target="" sidePair="width-width,top-top"/>
+    </graph>
+    <graph id="n46_w9h8" name="bg1" xy="100,0" size="200,60" group="n58_w9h8" type="rect" lineColor="#ffcccccc" fillColor="#fff9f9f9">
+      <gearColor controller="c1" pages="0,1" values="#f9f9f9|#f5faff"/>
+      <relation target="" sidePair="width-width,top-top"/>
+    </graph>
+    <graph id="n47_w9h8" name="bg2" xy="300,0" size="200,60" group="n58_w9h8" type="rect" lineColor="#ffcccccc" fillColor="#fff9f9f9">
+      <gearColor controller="c1" pages="0,1" values="#f9f9f9|#f5faff"/>
+      <relation target="" sidePair="width-width,top-top"/>
+    </graph>
+    <graph id="n48_w9h8" name="bg3" xy="500,0" size="200,60" group="n58_w9h8" type="rect" lineColor="#ffcccccc" fillColor="#fff9f9f9">
+      <gearColor controller="c1" pages="0,1" values="#f9f9f9|#f5faff"/>
+      <relation target="" sidePair="top-top"/>
+    </graph>
+    <graph id="n49_w9h8" name="bg4" xy="700,0" size="200,60" group="n58_w9h8" type="rect" lineColor="#ffcccccc" fillColor="#fff9f9f9">
+      <gearColor controller="c1" pages="0,1" values="#f9f9f9|#f5faff"/>
+      <relation target="" sidePair="width-width,top-top"/>
+    </graph>
+    <graph id="n50_w9h8" name="bg5" xy="900,0" size="150,60" group="n58_w9h8" type="rect" lineColor="#ffcccccc" fillColor="#fff9f9f9">
+      <gearColor controller="c1" pages="0,1" values="#f9f9f9|#f5faff"/>
+      <relation target="" sidePair="width-width,top-top"/>
+    </graph>
+    <graph id="n51_w9h8" name="bg6" xy="1050,0" size="180,60" group="n58_w9h8" type="rect" lineColor="#ffcccccc" fillColor="#fff9f9f9">
+      <gearColor controller="c1" pages="0,1" values="#f9f9f9|#f5faff"/>
+      <relation target="" sidePair="width-width,top-top"/>
+    </graph>
+    <graph id="n52_w9h8" name="bg7" xy="1230,0" size="180,60" group="n58_w9h8" type="rect" lineColor="#ffcccccc" fillColor="#fff9f9f9">
+      <gearColor controller="c1" pages="0,1" values="#f9f9f9|#f5faff"/>
+      <relation target="" sidePair="width-width,top-top"/>
+    </graph>
+    <graph id="n53_w9h8" name="bg8" xy="1410,0" size="180,60" group="n58_w9h8" type="rect" lineColor="#ffcccccc" fillColor="#fff9f9f9">
+      <gearColor controller="c1" pages="0,1" values="#f9f9f9|#f5faff"/>
+      <relation target="" sidePair="width-width,top-top"/>
+    </graph>
+    <graph id="n54_w9h8" name="bg9" xy="1590,0" size="180,60" group="n58_w9h8" type="rect" lineColor="#ffcccccc" fillColor="#fff9f9f9">
+      <gearColor controller="c1" pages="0,1" values="#f9f9f9|#f5faff"/>
+      <relation target="" sidePair="width-width,top-top"/>
+    </graph>
+    <graph id="n55_w9h8" name="bg10" xy="1770,0" size="50,60" group="n58_w9h8" type="rect" lineColor="#ffcccccc" fillColor="#fff9f9f9">
+      <gearColor controller="c1" pages="0,1" values="#f9f9f9|#f5faff"/>
+      <relation target="" sidePair="width-width,top-top"/>
+    </graph>
+    <graph id="n56_w9h8" name="bg11" xy="1820,0" size="50,60" group="n58_w9h8" type="rect" lineColor="#ffcccccc" fillColor="#fff9f9f9">
+      <gearColor controller="c1" pages="0,1" values="#f9f9f9|#f5faff"/>
+      <relation target="" sidePair="width-width,top-top"/>
+    </graph>
+    <graph id="n57_w9h8" name="bg12" xy="1870,0" size="50,60" group="n58_w9h8" type="rect" lineColor="#ffcccccc" fillColor="#fff9f9f9">
+      <gearColor controller="c1" pages="0,1" values="#f9f9f9|#f5faff"/>
+      <relation target="" sidePair="width-width,top-top"/>
+    </graph>
+    <group id="n58_w9h8" name="n58" xy="0,0" size="1920,60" advanced="true" layout="hz" excludeInvisibles="true">
+      <relation target="" sidePair="width-width,top-top"/>
+    </group>
+    <text id="n31_w9h8" name="title" xy="0,0" size="100,60" group="n44_w9h8" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="排名">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n32_w9h8" name="owner_name" xy="100,0" size="200,60" group="n44_w9h8" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="主人">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n33_w9h8" name="pet_name" xy="300,0" size="200,60" group="n44_w9h8" fontSize="32" color="#ff0000" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="名字">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n34_w9h8" name="pet_origin_name" xy="500,0" size="200,60" group="n44_w9h8" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="类型">
+      <relation target="" sidePair="top-top"/>
+    </text>
+    <text id="n35_w9h8" name="grow_rate" xy="700,0" size="200,60" group="n44_w9h8" fontSize="32" color="#ff0000" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="成长">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n36_w9h8" name="level" xy="900,0" size="150,60" group="n44_w9h8" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="等级">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n37_w9h8" name="attack" xy="1050,0" size="180,60" group="n44_w9h8" fontSize="32" color="#ff0000" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="攻击">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n38_w9h8" name="defence" xy="1230,0" size="180,60" group="n44_w9h8" fontSize="32" color="#0000ff" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="防御">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n39_w9h8" name="dexterity" xy="1410,0" size="180,60" group="n44_w9h8" fontSize="32" color="#006633" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="敏捷">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n40_w9h8" name="life" xy="1590,0" size="180,60" group="n44_w9h8" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="生命">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n41_w9h8" name="medal_attack" xy="1770,0" size="50,60" group="n44_w9h8" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="攻章">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n42_w9h8" name="medal_defence" xy="1820,0" size="50,60" group="n44_w9h8" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="防章">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n43_w9h8" name="medal_dexterity" xy="1870,0" size="50,60" group="n44_w9h8" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="敏章">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <group id="n44_w9h8" name="n44" xy="0,0" size="1920,60" advanced="true" layout="hz" excludeInvisibles="true">
+      <relation target="" sidePair="width-width,top-top"/>
+    </group>
+    <image id="n15_qykq" name="n15" src="qykq18" fileName="res/images/item_choose.png" xy="-8,-8" size="1936,76">
+      <gearDisplay controller="button" pages="3,5"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

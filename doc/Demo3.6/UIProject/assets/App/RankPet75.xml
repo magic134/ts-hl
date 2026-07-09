@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n33_sccx" name="n0" xy="0,0" size="1920,1080" type="rect" lineSize="0" fillColor="#ff333333">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <list id="n58_qykq" name="list" xy="0,168" size="1920,901" overflow="scroll" defaultItem="ui://4ur0owgdqykq1d" autoClearItems="true">
+      <relation target="" sidePair="width-width,height-height,bottom-bottom"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <text id="n59_qykq" name="n59" xy="654,7" size="611,79" fontSize="60" color="#006600" align="center" vAlign="middle" underline="true" bold="true" singleLine="true" text="木不可进化宠物排行榜">
+      <relation target="" sidePair="center-center,top-top"/>
+    </text>
+    <graph id="n75_qykq" name="n75" xy="0,100" size="1920,60" touchable="false" type="rect" lineSize="0" lineColor="#ffcccccc" fillColor="#fff0f0f0">
+      <relation target="" sidePair="width-width,top-top"/>
+    </graph>
+    <text id="n60_qykq" name="title" xy="0,100" size="100,60" group="n74_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="排名">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n61_qykq" name="owner_name" xy="100,100" size="200,60" group="n74_qykq" fontSize="32" align="center" vAlign="middle" autoSize="ellipsis" singleLine="true" text="主人">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n62_qykq" name="pet_name" xy="300,100" size="200,60" group="n74_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="名字">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n63_qykq" name="pet_origin_name" xy="500,100" size="200,60" group="n74_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="类型">
+      <relation target="" sidePair="top-top"/>
+    </text>
+    <text id="n64_qykq" name="grow_rate" xy="700,100" size="200,60" group="n74_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="成长">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n65_qykq" name="level" xy="900,100" size="150,60" group="n74_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="等级">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n66_qykq" name="attack" xy="1050,100" size="180,60" group="n74_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="攻击">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n67_qykq" name="defence" xy="1230,100" size="180,60" group="n74_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="防御">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n68_qykq" name="dexterity" xy="1410,100" size="180,60" group="n74_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="敏捷">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n69_qykq" name="life" xy="1590,100" size="176,60" group="n74_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="生命">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n70_qykq" name="medal_attack" xy="1766,100" size="50,60" group="n74_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="攻章">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n71_qykq" name="medal_defence" xy="1816,100" size="50,60" group="n74_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="防章">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n72_qykq" name="medal_dexterity" xy="1866,100" size="50,60" group="n74_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="敏章">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <group id="n74_qykq" name="n74" xy="0,100" size="1916,60" advanced="true" layout="hz" excludeInvisibles="true">
+      <relation target="" sidePair="width-width,top-top"/>
+    </group>
+  </displayList>
+</component>

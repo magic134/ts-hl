@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class BallCardData {
     id: number;                             // 卡片ID（主键）

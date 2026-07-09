@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="4ur0owgd">
+  <resources>
+    <component id="e86k0" name="App.xml" path="/" exported="true"/>
+    <movieclip id="sccx1" name="青翼蝠.jta" path="/res/animation/"/>
+    <image id="sccx3" name="btn_simple2.png" path="/res/images/" scale="9grid" scale9grid="21,6,42,12"/>
+    <image id="sccx4" name="btn_simple3.png" path="/res/images/" scale="9grid" scale9grid="21,6,42,12"/>
+    <image id="sccx5" name="btn_simple1.png" path="/res/images/" scale="9grid" scale9grid="21,6,42,12"/>
+    <component id="sccx6" name="ButtonSimple.xml" path="/components/"/>
+    <component id="sccx7" name="ButtonSwitch.xml" path="/components/"/>
+    <component id="sccx8" name="Alert.xml" path="/" exported="true"/>
+    <component id="sccx9" name="Menu.xml" path="/" exported="true"/>
+    <image id="sccxq" name="Man01.png" path="/res/images/head/" exported="true"/>
+    <image id="sccxr" name="Man02.png" path="/res/images/head/" exported="true"/>
+    <image id="sccxs" name="Man03.png" path="/res/images/head/" exported="true"/>
+    <image id="sccxt" name="Man04.png" path="/res/images/head/" exported="true"/>
+    <image id="sccxu" name="Man05.png" path="/res/images/head/" exported="true"/>
+    <image id="sccxv" name="Man06.png" path="/res/images/head/" exported="true"/>
+    <image id="sccxw" name="man07.png" path="/res/images/head/" exported="true"/>
+    <image id="sccxx" name="man08.png" path="/res/images/head/" exported="true"/>
+    <image id="sccxy" name="Woman01.png" path="/res/images/head/" exported="true"/>
+    <image id="sccxz" name="Woman02.png" path="/res/images/head/" exported="true"/>
+    <image id="sccx10" name="Woman03.png" path="/res/images/head/" exported="true"/>
+    <image id="sccx11" name="Woman04.png" path="/res/images/head/" exported="true"/>
+    <image id="sccx12" name="Woman05.png" path="/res/images/head/" exported="true"/>
+    <image id="sccx13" name="Woman06.png" path="/res/images/head/" exported="true"/>
+    <image id="sccx14" name="woman07.png" path="/res/images/head/" exported="true"/>
+    <image id="sccx15" name="woman08.png" path="/res/images/head/" exported="true"/>
+    <component id="qykq16" name="RankPlayerToutai.xml" path="/" exported="true"/>
+    <component id="qykq17" name="ItemRankPlayerHongli.xml" path="/components/"/>
+    <image id="qykq18" name="item_choose.png" path="/res/images/" scale="9grid" scale9grid="27,27,54,54"/>
+    <image id="qykq19" name="btn_close_normal.png" path="/res/images/"/>
+    <image id="qykq1a" name="btn_close_selected.png" path="/res/images/"/>
+    <component id="qykq1b" name="CloseButton.xml" path="/" exported="true"/>
+    <component id="qykq1c" name="RankPet.xml" path="/" exported="true"/>
+    <component id="qykq1d" name="ItemRankPet.xml" path="/components/"/>
+    <image id="qykq1e" name="cmb_1.png" path="/res/images/"/>
+    <image id="qykq1f" name="cmb_2.png" path="/res/images/"/>
+    <image id="qykq1g" name="cmb_3.png" path="/res/images/"/>
+    <image id="qykq1h" name="cmb_4.png" path="/res/images/"/>
+    <image id="qykq1i" name="cmb_item_1.png" path="/res/images/"/>
+    <image id="qykq1j" name="cmb_item_2.png" path="/res/images/"/>
+    <image id="qykq1k" name="cmb_item_3.png" path="/res/images/"/>
+    <image id="qykq1l" name="cmb_item_4.png" path="/res/images/"/>
+    <component id="qykq1m" name="DropdownBox_item.xml" path="/components/"/>
+    <component id="qykq1o" name="DropdownBox_popup.xml" path="/components/"/>
+    <component id="qykq1p" name="DropdownBox.xml" path="/components/" exported="true"/>
+    <image id="qykq1q" name="cmb_item_bg.png" path="/res/images/" scale="9grid" scale9grid="26,10,52,20"/>
+    <component id="qykq1r" name="DropdownBox_button.xml" path="/components/"/>
+    <component id="qykq1t" name="ItemMyPet.xml" path="/components/"/>
+    <component id="ojjb1v" name="ItemMyItem.xml" path="/components/"/>
+    <component id="ojjb1x" name="ItemMyStore.xml" path="/components/"/>
+    <movieclip id="oqla1y" name="201.jta" path="/res/animation/"/>
+    <movieclip id="oqla1z" name="404.jta" path="/res/animation/"/>
+    <movieclip id="oqla21" name="105.jta" path="/res/animation/"/>
+    <component id="w9h823" name="ButtonSimple2.xml" path="/components/"/>
+    <component id="w9h824" name="RankPet2.xml" path="/" exported="true"/>
+    <component id="w9h825" name="RankPet3.xml" path="/" exported="true"/>
+    <component id="w9h826" name="RankPet4.xml" path="/" exported="true"/>
+    <component id="w9h827" name="RankPet5.xml" path="/" exported="true"/>
+    <component id="w9h828" name="RankPet6.xml" path="/" exported="true"/>
+    <component id="w9h829" name="RankPet72.xml" path="/" exported="true"/>
+    <component id="w9h82a" name="RankPet73.xml" path="/" exported="true"/>
+    <component id="w9h82b" name="RankPet74.xml" path="/" exported="true"/>
+    <component id="w9h82c" name="RankPet75.xml" path="/" exported="true"/>
+    <component id="w9h82d" name="RankPet76.xml" path="/" exported="true"/>
+    <component id="w9h82e" name="RankPet7.xml" path="/" exported="true"/>
+    <movieclip id="w9h82g" name="321.jta" path="/res/animation/"/>
+    <movieclip id="w9h82h" name="108.jta" path="/res/animation/"/>
+    <movieclip id="w9h82i" name="215.jta" path="/res/animation/"/>
+    <movieclip id="w9h82j" name="514.jta" path="/res/animation/"/>
+    <movieclip id="w9h82l" name="0055.jta" path="/res/animation/"/>
+    <movieclip id="w9h82n" name="507.jta" path="/res/animation/"/>
+    <movieclip id="w9h82o" name="0058.jta" path="/res/animation/"/>
+    <movieclip id="w9h82p" name="aswalk.jta" path="/res/animation/"/>
+    <component id="mkzb2q" name="RankPlayerToutai(1).xml" path="/" exported="true"/>
+    <component id="mkzb2r" name="Menu(1).xml" path="/" exported="true"/>
+    <component id="cjqk2s" name="ItemRankPlayer.xml" path="/components/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

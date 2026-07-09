@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxColosseumData {
     id: number = 0;                         // 角斗场ID（主键）

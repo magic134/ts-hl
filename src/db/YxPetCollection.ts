@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxPetCollectionData {
     id: number = 0;                         // 宠物收集ID（主键）

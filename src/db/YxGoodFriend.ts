@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxGoodFriendData {
     userid: number = 0;                      // 用户ID（主键）

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1800,150" extention="Button">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <controller name="button" pages="2,up,3,down,4,over,5,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n0_qykq" name="n0" xy="0,0" size="1800,150" touchable="false" type="rect" fillColor="#fff9f9f9">
+      <gearDisplay controller="c1" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <graph id="n1_qykq" name="n1" xy="0,0" size="1800,150" touchable="false" type="rect" fillColor="#fff5faff">
+      <gearDisplay controller="c1" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n3_qykq" name="title" xy="0,0" size="61,150" fontSize="32" align="center" vAlign="middle" autoSize="none" singleLine="true" text="50&#xA;">
+      <relation target="" sidePair="left-left"/>
+    </text>
+    <loader id="n5_qykq" name="icon" xy="70,20" size="72,110" url="ui://4ur0owgdsccxr" align="center" vAlign="middle" fill="scaleMatchHeight">
+      <relation target="" sidePair="left-left"/>
+    </loader>
+    <text id="n6_qykq" name="name" xy="150,4" size="326,46" group="n19_mkzb" fontSize="32" autoSize="shrink" singleLine="true" text="我的名字七个字※20"/>
+    <text id="n7_qykq" name="chenghao" xy="491,4" size="340,46" group="n19_mkzb" fontSize="32" color="#ff0000" autoSize="shrink" singleLine="true" text="尚武天神[99]"/>
+    <text id="n17_w9h8" name="additional_point" xy="846,4" size="307,46" group="n19_mkzb" fontSize="32" autoSize="shrink" singleLine="true" text="红利：99999"/>
+    <text id="n12_qykq" name="level" xy="1168,4" size="307,46" group="n19_mkzb" fontSize="32" autoSize="none" text="等级：1400"/>
+    <text id="n16_w9h8" name="love" xy="1490,4" size="307,46" group="n19_mkzb" fontSize="32" autoSize="none" text="爱心:2,000,000,000"/>
+    <group id="n19_mkzb" name="n19" xy="150,4" size="1647,46" group="n18_w9h8" advanced="true" layout="hz" colGap="15" excludeInvisibles="true"/>
+    <text id="n8_qykq" name="mate" xy="149,54" size="326,46" group="n20_mkzb" fontSize="32" autoSize="shrink" singleLine="true" text="配偶：配偶名字七个字"/>
+    <text id="n9_qykq" name="degree_lev" xy="490,54" size="340,46" group="n20_mkzb" fontSize="32" autoSize="shrink" singleLine="true" text="修为：10000000"/>
+    <text id="n10_qykq" name="money" xy="845,54" size="307,46" group="n20_mkzb" fontSize="32" autoSize="shrink" text="金钱：2,000,000,000"/>
+    <text id="n11_qykq" name="deed" xy="1167,54" size="307,46" group="n20_mkzb" fontSize="32" autoSize="shrink" text="功德：2,000,000,000"/>
+    <text id="n13_qykq" name="exp_medicine" xy="1489,54" size="307,46" group="n20_mkzb" fontSize="32" autoSize="shrink" text="养宠:2,000,000,000"/>
+    <group id="n20_mkzb" name="n20" xy="149,54" size="1647,46" group="n18_w9h8" advanced="true" layout="hz" colGap="15" excludeInvisibles="true"/>
+    <text id="n22_cjqk" name="monicker" xy="150,102" size="326,46" group="n27_cjqk" fontSize="32" autoSize="shrink" singleLine="true" text="绰号：无"/>
+    <text id="n23_cjqk" name="exp_creative" xy="491,102" size="340,46" group="n27_cjqk" fontSize="32" autoSize="shrink" singleLine="true" text="创招：2,000,000,000"/>
+    <text id="n24_cjqk" name="repute" xy="846,102" size="307,46" group="n27_cjqk" fontSize="32" autoSize="shrink" text="声望：2,000,000,000"/>
+    <text id="n25_cjqk" name="exp_smith" xy="1168,102" size="307,46" group="n27_cjqk" fontSize="32" autoSize="shrink" text="炼化：2,000,000,000"/>
+    <text id="n26_cjqk" name="exp_steal" xy="1490,102" size="307,46" group="n27_cjqk" fontSize="32" autoSize="shrink" text="偷窃：2,000,000,000"/>
+    <group id="n27_cjqk" name="n27" xy="150,102" size="1647,46" group="n18_w9h8" advanced="true" layout="hz" colGap="15" excludeInvisibles="true"/>
+    <group id="n18_w9h8" name="n18" xy="149,4" size="1648,144" advanced="true">
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <image id="n15_qykq" name="n15" src="qykq18" fileName="res/images/item_choose.png" xy="-8,-8" size="1816,166">
+      <gearDisplay controller="button" pages="3,5"/>
+    </image>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

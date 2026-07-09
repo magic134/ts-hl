@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxItemTypeData {
     id: number;                             // 物品类型ID（主键）

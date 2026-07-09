@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxPlayerMapData {
     id: number;                             // 玩家地图ID（主键）

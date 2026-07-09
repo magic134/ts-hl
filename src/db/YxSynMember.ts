@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxSynMemberData {
     id: number = 0;                         // 成员ID（主键）

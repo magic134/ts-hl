@@ -1,4 +1,4 @@
-import { DbClient } from "../db/DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxGetUsers {
     constructor() {}

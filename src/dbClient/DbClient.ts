@@ -1,12 +1,24 @@
 import mysql from 'mysql';
 
 
+// // 2. 数据库配置（保持不变）
+// const DB_CONFIG = {
+//     host: '192.168.171.128',
+//     user: 'root',
+//     password: 'root',
+//     database: 'hlyx',
+//     port: 3306,
+//     insecureAuth: true,
+//     connectTimeout: 10000,
+//     charset: 'gbk', // 与数据库字段编码一致
+//     flags: ['NO_CHARSET_CONVERSION'] // 禁用模块的自动编码转换
+// };
 // 2. 数据库配置（保持不变）
 const DB_CONFIG = {
-    host: '192.168.171.128',
+    host: '43.136.28.68',
     user: 'root',
-    password: 'root',
-    database: 'hlyx',
+    password: 'Zhang3@li4',
+    database: 'tg1',
     port: 3306,
     insecureAuth: true,
     connectTimeout: 10000,

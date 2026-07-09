@@ -1,0 +1,19 @@
+{
+  "name": "demo3.6",
+  "uuid": "6a195c98-65b3-4cc0-8532-5057bef89dcd",
+  "version": "3.6.1",
+  "creator": {
+    "version": "3.8.8"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "fairygui-cc": "latest"
+  }
+}

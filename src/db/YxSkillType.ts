@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxSkillTypeData {
     id: number;                             // 技能类型ID（主键）

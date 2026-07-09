@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxPlayerNpcData {
     id: number;                             // 玩家NPC ID（主键）

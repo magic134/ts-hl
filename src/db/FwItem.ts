@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class FwItemData {
     ownerid: number = 0;                     // 拥有者ID（主键）

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <graph id="n33_sccx" name="n0" xy="0,0" size="1920,1080" type="rect" lineSize="0" fillColor="#ff333333">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n88_mkzb" name="n88" xy="0,0" size="1920,208" fontSize="60" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="心动幻灵排行榜&#xA;群：1156777076">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <component id="n46_sccx" name="btn_player_rank0" src="sccx6" fileName="components/ButtonSimple.xml" xy="165,236" size="240,80" group="n63_ojjb">
+      <Button title="红利排行" titleFontSize="32"/>
+    </component>
+    <component id="n82_w9h8" name="btn_player_rank1" src="sccx6" fileName="components/ButtonSimple.xml" xy="435,236" size="240,80" group="n63_ojjb">
+      <Button title="修为排行" titleFontSize="32"/>
+    </component>
+    <component id="n83_w9h8" name="btn_player_rank2" src="sccx6" fileName="components/ButtonSimple.xml" xy="705,236" size="240,80" group="n63_ojjb">
+      <Button title="功德排行" titleFontSize="32"/>
+    </component>
+    <component id="n84_w9h8" name="btn_player_rank3" src="sccx6" fileName="components/ButtonSimple.xml" xy="975,236" size="240,80" group="n63_ojjb">
+      <Button title="养宠排行" titleFontSize="32"/>
+    </component>
+    <component id="n85_w9h8" name="btn_player_rank4" src="sccx6" fileName="components/ButtonSimple.xml" xy="1245,236" size="240,80" group="n63_ojjb">
+      <Button title="金钱排行" titleFontSize="32"/>
+    </component>
+    <component id="n86_w9h8" name="btn_player_rank5" src="sccx6" fileName="components/ButtonSimple.xml" xy="1515,236" size="240,80" group="n63_ojjb">
+      <Button title="存款排行" titleFontSize="32"/>
+    </component>
+    <group id="n63_ojjb" name="n63" xy="165,236" size="1590,80" group="n87_mkzb" advanced="true" layout="hz" colGap="30" excludeInvisibles="true">
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <component id="n47_sccx" name="btn_pet_rank1" src="w9h823" fileName="components/ButtonSimple2.xml" xy="165,377" size="240,80" group="n72_w9h8">
+      <Button title="宠物排行" titleFontSize="32" icon="ui://4ur0owgdw9h82p"/>
+    </component>
+    <component id="n65_w9h8" name="btn_pet_rank2" src="w9h823" fileName="components/ButtonSimple2.xml" xy="435,377" size="240,80" group="n72_w9h8">
+      <Button title="水属性宠" titleColor="#0099ff" titleFontSize="32" icon="ui://4ur0owgdw9h82g"/>
+    </component>
+    <component id="n66_w9h8" name="btn_pet_rank3" src="w9h823" fileName="components/ButtonSimple2.xml" xy="705,377" size="240,80" group="n72_w9h8">
+      <Button title="火属性宠" titleColor="#ff0000" titleFontSize="32" icon="ui://4ur0owgdoqla1z"/>
+    </component>
+    <component id="n67_w9h8" name="btn_pet_rank4" src="w9h823" fileName="components/ButtonSimple2.xml" xy="975,377" size="240,80" group="n72_w9h8">
+      <Button title="金属性宠" titleColor="#000000" titleFontSize="32" icon="ui://4ur0owgdw9h82h"/>
+    </component>
+    <component id="n68_w9h8" name="btn_pet_rank5" src="w9h823" fileName="components/ButtonSimple2.xml" xy="1245,377" size="240,80" group="n72_w9h8">
+      <Button title="木属性宠" titleFontSize="32" icon="ui://4ur0owgdw9h82i"/>
+    </component>
+    <component id="n69_w9h8" name="btn_pet_rank6" src="w9h823" fileName="components/ButtonSimple2.xml" xy="1515,377" size="240,80" group="n72_w9h8">
+      <Button title="土属性宠" titleFontSize="32" icon="ui://4ur0owgdw9h82j"/>
+    </component>
+    <group id="n72_w9h8" name="n72" xy="165,377" size="1590,80" group="n87_mkzb" advanced="true" layout="hz" colGap="30" excludeInvisibles="true">
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <component id="n74_w9h8" name="btn_pet_rank71" src="w9h823" fileName="components/ButtonSimple2.xml" xy="165,520" size="240,80" group="n80_w9h8">
+      <Button title="不可进化排行" titleFontSize="32"/>
+    </component>
+    <component id="n75_w9h8" name="btn_pet_rank72" src="w9h823" fileName="components/ButtonSimple2.xml" xy="435,520" size="240,80" group="n80_w9h8">
+      <Button title="水不可进化" titleColor="#0099ff" titleFontSize="32" icon="ui://4ur0owgdw9h82l"/>
+    </component>
+    <component id="n76_w9h8" name="btn_pet_rank73" src="w9h823" fileName="components/ButtonSimple2.xml" xy="705,520" size="240,80" group="n80_w9h8">
+      <Button title="火不可进化" titleColor="#ff0000" titleFontSize="32" icon="ui://4ur0owgdw9h82o"/>
+    </component>
+    <component id="n77_w9h8" name="btn_pet_rank74" src="w9h823" fileName="components/ButtonSimple2.xml" xy="975,520" size="240,80" group="n80_w9h8">
+      <Button title="金不可进化" titleColor="#000000" titleFontSize="32" icon="ui://4ur0owgdoqla21"/>
+    </component>
+    <component id="n78_w9h8" name="btn_pet_rank75" src="w9h823" fileName="components/ButtonSimple2.xml" xy="1245,520" size="240,80" group="n80_w9h8">
+      <Button title="木不可进化" titleFontSize="32" icon="ui://4ur0owgdoqla1y"/>
+    </component>
+    <component id="n79_w9h8" name="btn_pet_rank76" src="w9h823" fileName="components/ButtonSimple2.xml" xy="1515,520" size="240,80" group="n80_w9h8">
+      <Button title="土不可进化" titleFontSize="32" icon="ui://4ur0owgdw9h82n"/>
+    </component>
+    <group id="n80_w9h8" name="n80" xy="165,520" size="1590,80" group="n87_mkzb" advanced="true" layout="hz" colGap="30" excludeInvisibles="true">
+      <relation target="" sidePair="width-width,height-height"/>
+    </group>
+    <group id="n87_mkzb" name="n87" xy="165,236" size="1590,364" advanced="true">
+      <relation target="" sidePair="width-width"/>
+      <relation target="n88_mkzb" sidePair="top-bottom"/>
+    </group>
+  </displayList>
+</component>

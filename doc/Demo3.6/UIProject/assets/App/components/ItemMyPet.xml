@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,60" extention="Button">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <controller name="button" pages="2,up,3,down,4,over,5,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n0_qykq" name="n0" xy="0,0" size="1920,60" touchable="false" type="rect" lineSize="0" lineColor="#ffcccccc" fillColor="#fff0f0f0">
+      <gearDisplay controller="c1" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <graph id="n1_qykq" name="n1" xy="0,0" size="1920,60" touchable="false" type="rect" lineSize="0" lineColor="#ffcccccc" fillColor="#ffcccccc">
+      <gearDisplay controller="c1" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <image id="n15_qykq" name="n15" src="qykq18" fileName="res/images/item_choose.png" xy="-8,-8" size="1936,76">
+      <gearDisplay controller="button" pages="3,5"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n3_qykq" name="title" xy="0,0" size="108,60" group="n30_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="100">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n19_qykq" name="pet_name" xy="108,0" size="306,60" group="n30_qykq" fontSize="32" color="#ff0000" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="名字">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n18_qykq" name="pet_origin_name" xy="414,0" size="153,60" group="n30_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="宠名">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n20_qykq" name="grow_rate" xy="567,0" size="153,60" group="n30_qykq" fontSize="32" color="#ff0000" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="200.25">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n21_qykq" name="level" xy="720,0" size="142,60" group="n30_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="1250">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n22_qykq" name="attack" xy="862,0" size="154,60" group="n30_qykq" fontSize="32" color="#ff0000" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="攻击">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n23_qykq" name="defence" xy="1016,0" size="154,60" group="n30_qykq" fontSize="32" color="#0000ff" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="防御">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n24_qykq" name="dexterity" xy="1170,0" size="153,60" group="n30_qykq" fontSize="32" color="#009900" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="敏捷">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n25_qykq" name="life" xy="1323,0" size="183,60" group="n30_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="生命">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n26_qykq" name="medal_attack" xy="1506,0" size="50,60" group="n30_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="5">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n27_qykq" name="medal_defence" xy="1556,0" size="50,60" group="n30_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="5">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n28_qykq" name="medal_dexterity" xy="1606,0" size="50,60" group="n30_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="5">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n29_qykq" name="pet_store" xy="1656,0" size="264,60" group="n30_qykq" fontSize="32" align="center" vAlign="middle" autoSize="shrink" singleLine="true" text="装备">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <group id="n30_qykq" name="n30" xy="0,0" size="1920,60" advanced="true" layout="hz" excludeInvisibles="true">
+      <relation target="" sidePair="left-left"/>
+    </group>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

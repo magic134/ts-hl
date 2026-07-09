@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n33_sccx" name="n0" xy="0,0" size="1920,1080" type="rect" lineSize="0" fillColor="#ff333333">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <list id="n58_qykq" name="list" xy="60,93" size="1800,978" overflow="scroll" defaultItem="ui://4ur0owgdqykq17" autoClearItems="true">
+      <relation target="" sidePair="width-width,height-height,top-top,bottom-bottom"/>
+      <item title="1" icon="ui://4ur0owgdsccxq" name="1" selectedTitle="2"/>
+      <item title="2" icon="ui://4ur0owgdsccxy" name="2"/>
+      <item title="3" icon="ui://4ur0owgdsccxr" name="3"/>
+      <item title="4" icon="ui://4ur0owgdsccxz" name="4"/>
+      <item title="5" icon="ui://4ur0owgdsccxs" name="5"/>
+      <item title="6" icon="ui://4ur0owgdsccxt" name="6"/>
+      <item title="7" icon="ui://4ur0owgdsccxu"/>
+      <item icon="ui://4ur0owgdsccxv"/>
+      <item icon="ui://4ur0owgdsccx10"/>
+      <item icon="ui://4ur0owgdsccx11"/>
+      <item icon="ui://4ur0owgdsccx12"/>
+      <item icon="ui://4ur0owgdsccx13"/>
+      <item icon="ui://4ur0owgdsccxw"/>
+      <item icon="ui://4ur0owgdsccxx"/>
+      <item icon="ui://4ur0owgdsccx14"/>
+      <item icon="ui://4ur0owgdsccx15"/>
+    </list>
+    <text id="n59_qykq" name="title" xy="472,7" size="975,79" fontSize="60" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="人物排行榜">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <component id="n60_xhyh" name="cmb1" src="qykq1p" fileName="components/DropdownBox.xml" xy="122,8" visible="false">
+      <ComboBox title="默认" visibleItemCount="10">
+        <item title="默认" value="1"/>
+        <item title="红利" value="3"/>
+        <item title="修为" value="6"/>
+        <item title="功德" value="4"/>
+        <item title="金钱" value="2"/>
+        <item title="存款" value="5"/>
+      </ComboBox>
+    </component>
+  </displayList>
+</component>

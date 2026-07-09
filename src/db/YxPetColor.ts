@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxPetColorData {
     id_pet: number = 0;                     // 宠物ID（主键）

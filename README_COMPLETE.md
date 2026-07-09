@@ -5,8 +5,9 @@
 ## 📊 已实现的表模型（共39个表）
 
 ### 🏠 核心用户表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_user | YxUser | YxUserData | 用户基本信息 |
 | yx_useritem | YxUserItem | YxUserItemData | 用户物品 |
 | yx_userpetdata | YxUserPet | YxUserPetData | 用户宠物数据 |
@@ -14,114 +15,135 @@
 | yx_usercolor | YxUserColor | YxUserColorData | 用户颜色配置 |
 
 ### 🐾 宠物相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_pet | YxPet | YxPetData | 宠物信息 |
 | yx_petcollection | YxPetCollection | YxPetCollectionData | 宠物收集 |
 | yx_petcolor | YxPetColor | YxPetColorData | 宠物颜色 |
 
 ### 🎒 物品相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_item | YxItem | YxItemData | 物品信息 |
 | yx_itemtype | YxItemType | YxItemTypeData | 物品类型 |
 | fw_item | FwItem | FwItemData | 武器物品 |
 
 ### ⚔️ 技能相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_skill | YxSkill | YxSkillData | 技能信息 |
 | yx_skilltype | YxSkillType | YxSkillTypeData | 技能类型 |
 
 ### 🏰 公会相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_syndicate | YxSyndicate | YxSyndicateData | 公会信息 |
 | yx_synmember | YxSynMember | YxSynMemberData | 公会成员 |
 | yx_subgroup | YxSubGroup | YxSubGroupData | 子组信息 |
 
 ### 👹 怪物相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_monster | YxMonster | YxMonsterData | 怪物信息 |
 
 ### 🤖 NPC相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_npc | YxNpc | YxNpcData | NPC信息 |
 | yx_playernpc | YxPlayerNpc | YxPlayerNpcData | 玩家NPC |
 
 ### 📋 任务相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_task | YxTask | YxTaskData | 任务信息 |
 
 ### 🗄️ 存储相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_storage | YxStorage | YxStorageData | 存储信息 |
 
 ### 🗺️ 地图相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_playermap | YxPlayerMap | YxPlayerMapData | 玩家地图 |
 
 ### ⚡ 动作相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_action | YxAction | YxActionData | 动作信息 |
 
 ### 🔧 组装相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_assembly | YxAssembly | YxAssemblyData | 组装信息 |
 
 ### 🎁 奖励相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_bonus | YxBonus | YxBonusData | 奖励信息 |
 | yx_contestaward | YxContestAward | YxContestAwardData | 竞赛奖励 |
 
 ### 🏟️ 角斗场相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_colosseum | YxColosseum | YxColosseumData | 角斗场信息 |
 
 ### 📅 事件相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_event | YxEvent | YxEventData | 事件信息 |
 
 ### 👥 社交相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_goodfriend | YxGoodFriend | YxGoodFriendData | 好友信息 |
 | yx_leaveword | YxLeaveWord | YxLeaveWordData | 留言信息 |
 
 ### 🧠 问答相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | yx_quiz | YxQuiz | YxQuizData | 问答题目 |
 
 ### 👤 账户相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | account | Account | AccountData | 账户信息 |
 
 ### 💳 卡片相关表
+
 | 表名 | 模型类 | 数据类 | 说明 |
-|------|--------|--------|------|
+| ------ | -------- | -------- | ------ |
 | ball_card | BallCard | BallCardData | 卡片信息 |
 
 ## 🚀 快速开始
 
 ### 1. 安装依赖
+
 ```bash
 npm install
 ```
 
 ### 2. 配置数据库
+
 在 `src/db/DbClient.ts` 中配置数据库连接信息：
+
 ```typescript
 const DB_CONFIG = {
     host: '192.168.171.128',
@@ -134,7 +156,9 @@ const DB_CONFIG = {
 ```
 
 ### 3. 使用示例
+
 ```typescript
+
 import { DbClient, YxUser, YxUserData, YxPet, YxPetData } from './db';
 
 async function example() {

@@ -1,4 +1,4 @@
-import { DbClient } from "./DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export class YxContestAwardData {
     id: number;                             // 竞赛奖励ID（主键）
