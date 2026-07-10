@@ -24,3 +24,41 @@ export const RANK_TYPE_MAP: Record<string, { title: string; column: string; note
     "9": { title: "人物炼化排行榜", column: "exp_smith" },
     "10": { title: "人物偷窃排行榜", column: "exp_steal" }
 };
+
+/** 数据同步总开关 */
+export const SYNC_ENABLED = process.env.SYNC_ENABLED !== "false";
+
+/** 排行榜数据同步间隔，默认 5 分钟 */
+export const LEADERBOARD_SYNC_INTERVAL_MS = Number(
+    process.env.LEADERBOARD_SYNC_INTERVAL_MS || 5 * 60 * 1000
+);
+
+/** 角色完整信息同步间隔，默认 1 分钟 */
+export const USER_SYNC_INTERVAL_MS = Number(
+    process.env.USER_SYNC_INTERVAL_MS || 60 * 1000
+);
+
+/** 宠物等级排行榜快照过滤组合，覆盖 findPetRank 常见参数 */
+export const PET_RANK_FILTERS: { catena: string; isEvolution: string }[] = [
+    { catena: "", isEvolution: "" },
+    { catena: "", isEvolution: "1" },
+    { catena: "", isEvolution: "0" },
+    { catena: "2", isEvolution: "" },
+    { catena: "2", isEvolution: "1" },
+    { catena: "2", isEvolution: "0" },
+    { catena: "3", isEvolution: "" },
+    { catena: "3", isEvolution: "1" },
+    { catena: "3", isEvolution: "0" },
+    { catena: "4", isEvolution: "" },
+    { catena: "4", isEvolution: "1" },
+    { catena: "4", isEvolution: "0" },
+    { catena: "5", isEvolution: "" },
+    { catena: "5", isEvolution: "1" },
+    { catena: "5", isEvolution: "0" },
+    { catena: "6", isEvolution: "" },
+    { catena: "6", isEvolution: "1" },
+    { catena: "6", isEvolution: "0" },
+    { catena: "7", isEvolution: "" },
+    { catena: "7", isEvolution: "1" },
+    { catena: "7", isEvolution: "0" },
+];

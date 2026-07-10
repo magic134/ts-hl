@@ -1,27 +1,26 @@
 import { Router } from "express";
 import { authMiddleware, AuthRequest } from "../middleware/auth";
-import { UserRankService } from "../services/UserRankService";
-import { AuthService } from "../services/AuthService";
 import { UserItemService } from "../services/UserItemService";
 import { UserPetService } from "../services/UserPetService";
+import { SnapshotUserInfoService } from "../services/SnapshotUserInfoService";
+import { SnapshotUserRankService } from "../services/SnapshotUserRankService";
+import { SnapshotUserLeaderboardService } from "../services/SnapshotUserLeaderboardService";
 import { success, fail } from "../utils/response";
 
-import { UserLeaderboardService } from "../services/UserLeaderboardService";
-
 const router = Router();
-const userRankService = new UserRankService();
-const userLeaderboardService = new UserLeaderboardService();
-const authService = new AuthService();
+const snapshotUserRankService = new SnapshotUserRankService();
+const snapshotUserInfoService = new SnapshotUserInfoService();
+const snapshotUserLeaderboardService = new SnapshotUserLeaderboardService();
 const userItemService = new UserItemService();
 const userPetService = new UserPetService();
 
 /**
  * POST /user/findRank
- * 获取人物排行榜
+ * 获取人物排行榜（从快照表读取）
  */
 router.post("/findRank", authMiddleware, async (req: AuthRequest, res) => {
     try {
-        const data = await userRankService.findRank(req.body || {});
+        const data = await snapshotUserRankService.findRank(req.body || {});
         res.json(success(data));
     } catch (e: any) {
         res.json(fail(1, e.message));
@@ -30,11 +29,12 @@ router.post("/findRank", authMiddleware, async (req: AuthRequest, res) => {
 
 /**
  * POST /user/info
- * 获取单个用户信息
+ * 获取单个用户信息（从快照表读取）
  */
 router.post("/info", authMiddleware, async (req: AuthRequest, res) => {
     try {
-        const data = await authService.info(req.body || {});
+        const { user_id } = req.body || {};
+        const data = await snapshotUserInfoService.getInfo(Number(user_id));
         res.json(success(data));
     } catch (e: any) {
         res.json(fail(1, e.message));
@@ -43,12 +43,12 @@ router.post("/info", authMiddleware, async (req: AuthRequest, res) => {
 
 /**
  * POST /user/leaderboard
- * 获取 WWW不加密 风格的人物排行榜（红利/功德/幻币）
+ * 获取 WWW不加密 风格的人物排行榜（红利/功德/幻币），从快照表读取
  */
 router.post("/leaderboard", authMiddleware, async (req: AuthRequest, res) => {
     try {
         const { type } = req.body || {};
-        const data = await userLeaderboardService.findLeaderboard(type);
+        const data = await snapshotUserLeaderboardService.findLeaderboard(type);
         res.json(success(data));
     } catch (e: any) {
         res.json(fail(1, e.message));
