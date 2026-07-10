@@ -11,3 +11,5 @@ type 类型
     6：房子的储物柜
 item0-7 存储的物品id
  如果type=1 或者 type=5，item0-7存储的是 yx_pet表id
+
+ 

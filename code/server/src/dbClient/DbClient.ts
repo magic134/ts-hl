@@ -45,7 +45,7 @@ export class DbClient {
                     reject(new Error(`连接失败: ${err.message}`));
                     return;
                 }
-                console.log('数据库连接成功');
+                // console.log('数据库连接成功');
                 resolve();
             });
         });
@@ -59,7 +59,7 @@ export class DbClient {
                     reject(new Error(`关闭连接失败: ${err.message}`));
                     return;
                 }
-                console.log('连接已关闭');
+                // console.log('连接已关闭');
                 resolve();
             });
         });

@@ -5,7 +5,10 @@ import type {
     PetLeaderboardRow,
     UserInfoRequest,
     UserLeaderboardRow,
-    UserVo
+    UserVo,
+    EquippedItem,
+    BackpackItem,
+    UserPet
 } from "./types/api";
 
 const BASE = "/api";
@@ -56,6 +59,24 @@ export const userApi = {
         return request<UserVo>("/user/info", {
             method: "POST",
             body: JSON.stringify(data)
+        });
+    },
+    equipment(user_id: number) {
+        return request<EquippedItem[]>("/user/equipment", {
+            method: "POST",
+            body: JSON.stringify({ user_id })
+        });
+    },
+    backpack(user_id: number) {
+        return request<BackpackItem[]>("/user/backpack", {
+            method: "POST",
+            body: JSON.stringify({ user_id })
+        });
+    },
+    pets(user_id: number) {
+        return request<UserPet[]>("/user/pets", {
+            method: "POST",
+            body: JSON.stringify({ user_id })
         });
     }
 };

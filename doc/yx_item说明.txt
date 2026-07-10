@@ -1,0 +1,21 @@
+yx_item 保存是的玩家背包和身上的穿戴的装备
+id的规则：1+N个0+yx_user.id+两位数id
+例如yx_user.id = 5,物品id=1,yx_item.id=100000501
+例如yx_user.id = 25,物品id=11,yx_item.id=100002511
+例如yx_user.id = 125,物品id=2,yx_item.id=100012502
+例如yx_user.id = 1125,物品id=11,yx_item.id=100112511
+
+查询玩家背包和穿戴sql语句
+SELECT * FROM yx_item
+WHERE TRIM(LEADING '0' FROM SUBSTRING(LEFT(id, LENGTH(id) - 2), 2)) + 0 = 1125;
+
+排除身上穿戴物品
+SELECT i.*
+FROM yx_item i, yx_user u
+WHERE
+  u.id = 1343
+  -- 匹配当前用户物品
+  AND TRIM(LEADING '0' FROM SUBSTRING(LEFT(i.id, LENGTH(i.id) - 2), 2)) + 0 = 1343
+  -- 排除5个穿戴装备
+  AND i.id NOT IN (u.weapon_id, u.armor_id, u.shoes_id, u.treasure0_id, u.treasure1_id);
+
