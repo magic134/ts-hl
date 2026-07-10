@@ -10,7 +10,7 @@ export async function renderUserHongli(container: HTMLElement): Promise<void> {
                     <tr>
                         <th>排名</th>
                         <th>昵称</th>
-                        <th>人物</th>
+                        <th>头像</th>
                         <th>等级</th>
                         <th>称号</th>
                         <th>红利</th>
@@ -23,7 +23,7 @@ export async function renderUserHongli(container: HTMLElement): Promise<void> {
                         <tr>
                             <td>${r.rank}</td>
                             <td>${r.name}</td>
-                            <td>${renderAvatar(r.look, r.name, 30)}</td>
+                            <td>${renderAvatar(r.look, r.name, 45)}</td>
                             <td>${r.level}</td>
                             <td>${getTitle(r.metempsychosis)}[${getToutai(r.metempsychosis)}]</td>
                             <td>${r.hongli}</td>

@@ -1,4 +1,4 @@
-import { DbClient } from "../../../../src/dbClient/DbClient";
+import { DbClient } from "../dbClient/DbClient";
 import { UserVo } from "../types/api";
 import { RANK_TYPE_MAP } from "../config";
 

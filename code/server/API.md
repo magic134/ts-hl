@@ -178,9 +178,11 @@
 
 - **响应**：`MResponse<PetLeaderboardRow[]>`
 - **说明**：
-  - `all`：所有宠物总榜，排除 `floor(class/10000) = 7` 且 `level <= 1` 的宠物。
+  - `all`：所有宠物总榜。
+  - `evolution`：可进化宠榜，只保留 `floor(class/10000) != 7` 的宠物。
   - `nonEvolution`：不可进化宠榜，只保留 `floor(class/10000) = 7` 的宠物。
   - 按 PHP 成长公式 `(attack+defence+dexterity - base_stats)/(level-1)` 降序排列。
+  - `className` 通过 `yx_pet.class = yx_monster.class` 关联，显示 `yx_monster.name`。
 
 ## 数据类型
 

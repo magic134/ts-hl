@@ -43,7 +43,7 @@ export const leaderboardApi = {
             body: JSON.stringify({ type })
         });
     },
-    petLeaderboard(type: "all" | "nonEvolution") {
+    petLeaderboard(type: "all" | "evolution" | "nonEvolution") {
         return request<PetLeaderboardRow[]>("/pet/leaderboard", {
             method: "POST",
             body: JSON.stringify({ type })

@@ -1,4 +1,4 @@
-import { DbClient } from "../../../../src/dbClient/DbClient";
+import { DbClient } from "../dbClient/DbClient";
 import { PetRankBean } from "../types/api";
 import { PROP_MAP } from "../config";
 

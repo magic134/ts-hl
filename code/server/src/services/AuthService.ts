@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
-import { DbClient } from "../../../../src/dbClient/DbClient";
-import { Account, AccountData } from "../../../../src/db/Account";
-import { YxUser, YxUserData } from "../../../../src/db/YxUser";
-import { YxPet, YxPetData } from "../../../../src/db/YxPet";
+import { DbClient } from "../dbClient/DbClient";
+import { Account, AccountData } from "../db/Account";
+import { YxUser, YxUserData } from "../db/YxUser";
+import { YxPet, YxPetData } from "../db/YxPet";
 import { ReqLogin, ReqRegister, ReqUser, UserVo } from "../types/api";
 import { JWT_SECRET } from "../config";
 import { UserRankService } from "./UserRankService";

@@ -10,7 +10,7 @@ export async function renderPetAll(container: HTMLElement): Promise<void> {
                         <th>排名</th>
                         <th>主人</th>
                         <th>昵称</th>
-                        <th>种类</th>
+                        <th>类型</th>
                         <th>等级</th>
                         <th>成长</th>
                         <th>幻化</th>

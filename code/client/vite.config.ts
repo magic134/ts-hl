@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  publicDir: "../doc/WWW不加密",
+  publicDir: "public",
   server: {
     port: 5173,
     proxy: {

@@ -1,4 +1,4 @@
-import { DbClient } from "../../../../src/dbClient/DbClient";
+import { DbClient } from "../dbClient/DbClient";
 
 export type UserLeaderboardType = "hongli" | "deed" | "money";
 

@@ -8,7 +8,9 @@ import { renderPetNonEvolution } from "./petNonEvolution";
 
 import { renderPersonalInfo } from "./personalInfo";
 
-type View = "personal" | "hongli" | "deed" | "money" | "petAll" | "petNonEvolution";
+import { renderPetEvolution } from "./petEvolution";
+
+type View = "personal" | "hongli" | "deed" | "money" | "petAll" | "petEvolution" | "petNonEvolution";
 
 const TABS: { key: View; label: string }[] = [
     { key: "personal", label: "个人信息" },
@@ -16,6 +18,7 @@ const TABS: { key: View; label: string }[] = [
     { key: "deed", label: "人物功德榜" },
     { key: "money", label: "人物幻币榜" },
     { key: "petAll", label: "所有宠物总榜" },
+    { key: "petEvolution", label: "可进化宠榜" },
     { key: "petNonEvolution", label: "不可进化宠榜" }
 ];
 
@@ -71,6 +74,9 @@ function switchView(view: View, container: HTMLElement): void {
             break;
         case "petAll":
             renderPetAll(container);
+            break;
+        case "petEvolution":
+            renderPetEvolution(container);
             break;
         case "petNonEvolution":
             renderPetNonEvolution(container);
