@@ -116,8 +116,15 @@ body {
     gap: 12px;
 }
 
+.item-actions.four-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 12px;
+}
+
 .item-actions.two-col .btn,
-.item-actions.three-col .btn {
+.item-actions.three-col .btn,
+.item-actions.four-col .btn {
     width: 100%;
 }
 
@@ -469,8 +476,19 @@ body {
     background: rgba(0, 0, 0, 0.2);
 }
 
-.item-table tbody tr:nth-child(even) td {
-    background: rgba(0, 0, 0, 0.28);
+.baobaonang-section {
+    margin-bottom: 24px;
+}
+
+.baobaonang-section h4 {
+    margin: 0 0 12px;
+    color: #f0ad4e;
+    font-size: 16px;
+}
+
+.baobaonang-section p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
 }
 
 /* 响应式 */

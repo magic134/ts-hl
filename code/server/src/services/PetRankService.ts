@@ -15,9 +15,12 @@ export interface FindPetRankReq {
  * - isEvolution: 对应 yx_pet.generation（"1"=进化，"7"=不进化）
  */
 export class PetRankService {
-    async findPetRank(req: FindPetRankReq): Promise<PetRankBean[]> {
-        const db = new DbClient();
-        await db.connect();
+    async findPetRank(req: FindPetRankReq, sourceDb?: DbClient): Promise<PetRankBean[]> {
+        const db = sourceDb || new DbClient();
+        const shouldClose = !sourceDb;
+        if (shouldClose) {
+            await db.connect();
+        }
         try {
             const where: string[] = [];
             const params: any[] = [];
@@ -60,7 +63,9 @@ export class PetRankService {
                 pet_treasure: ""
             }));
         } finally {
-            await db.close();
+            if (shouldClose) {
+                await db.close();
+            }
         }
     }
 }

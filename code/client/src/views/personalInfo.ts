@@ -1,6 +1,7 @@
 import { userApi } from "../api";
 import { getSession } from "../auth";
 import { getTitle, getToutai, renderAvatar } from "../utils/format";
+import type { BaoBaoNangBag, QianKunDaiBag } from "../types/api";
 
 function renderModal(title: string, content: string): string {
     return `
@@ -152,6 +153,98 @@ function renderPetTable(items: import("../types/api").UserPet[]): string {
     `;
 }
 
+function renderBaoBaoNangTable(bags: BaoBaoNangBag[]): string {
+    if (bags.length === 0) {
+        return "<p>没有百宝囊数据</p>";
+    }
+    return bags.map((bag, idx) => {
+        const items = bag.items.filter(s => s.item);
+        const empty = items.length === 0;
+        return `
+            <div class="baobaonang-section">
+                <h4>百宝囊${idx + 1}</h4>
+                ${empty ? "<p>空</p>" : `
+                    <table class="table table-bordered table-responsive item-table">
+                        <thead>
+                            <tr>
+                                <th>槽位</th>
+                                <th>名字</th>
+                                <th>血量</th>
+                                <th>内力</th>
+                                <th>攻击</th>
+                                <th>防御</th>
+                                <th>敏捷</th>
+                                <th>作者</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${items.map(s => `
+                                <tr>
+                                    <td>${s.slot + 1}</td>
+                                    <td>${s.item.name || "-"}</td>
+                                    <td>${s.item.life || 0}</td>
+                                    <td>${s.item.power || 0}</td>
+                                    <td>${s.item.attack || 0}</td>
+                                    <td>${s.item.defence || 0}</td>
+                                    <td>${s.item.dexterity || 0}</td>
+                                    <td>${s.item.inventer_name || "-"}</td>
+                                </tr>
+                            `).join("")}
+                        </tbody>
+                    </table>
+                `}
+            </div>
+        `;
+    }).join("");
+}
+
+function renderQianKunDaiTable(bags: QianKunDaiBag[]): string {
+    if (bags.length === 0) {
+        return "<p>没有乾坤袋数据</p>";
+    }
+    return bags.map((bag, idx) => {
+        const items = bag.items.filter(s => s.pet);
+        const empty = items.length === 0;
+        return `
+            <div class="baobaonang-section">
+                <h4>乾坤袋${idx + 1}</h4>
+                ${empty ? "<p>空</p>" : `
+                    <table class="table table-bordered table-responsive item-table">
+                        <thead>
+                            <tr>
+                                <th>槽位</th>
+                                <th>名字</th>
+                                <th>等级</th>
+                                <th>生命</th>
+                                <th>攻击</th>
+                                <th>防御</th>
+                                <th>敏捷</th>
+                                <th>成长率</th>
+                                <th>幻化</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${items.map(s => `
+                                <tr>
+                                    <td>${s.slot + 1}</td>
+                                    <td>${s.pet.name || "-"}</td>
+                                    <td>${s.pet.level || 0}</td>
+                                    <td>${s.pet.life || 0}</td>
+                                    <td>${s.pet.attack || 0}</td>
+                                    <td>${s.pet.defence || 0}</td>
+                                    <td>${s.pet.dexterity || 0}</td>
+                                    <td>${s.pet.grow_rate || 0}</td>
+                                    <td>${s.pet.generation || 0}</td>
+                                </tr>
+                            `).join("")}
+                        </tbody>
+                    </table>
+                `}
+            </div>
+        `;
+    }).join("");
+}
+
 export async function renderPersonalInfo(container: HTMLElement): Promise<void> {
     try {
         const session = getSession();
@@ -160,7 +253,32 @@ export async function renderPersonalInfo(container: HTMLElement): Promise<void> 
             return;
         }
 
-        const user = await userApi.info({ acc_id: session.accountId, user_id: session.userId });
+        const [user, backpackItems] = await Promise.all([
+            userApi.info({ acc_id: session.accountId, user_id: session.userId }),
+            userApi.backpack(session.userId)
+        ]);
+
+        const baoNangItems = backpackItems.filter(i => (i.name || "").trim() === "※百宝囊");
+        const baoNangIds = baoNangItems.map(i => i.id);
+        const hasBaoNang = baoNangIds.length > 0;
+
+        const qianKunDaiItems = backpackItems.filter(i => (i.name || "").trim() === "※乾坤袋");
+        const qianKunDaiIds = qianKunDaiItems.map(i => i.id);
+        const hasQianKunDai = qianKunDaiIds.length > 0;
+
+        const secondRowButtons: string[] = [];
+        if (hasBaoNang) {
+            secondRowButtons.push(`<button id="btn-baobaonang" class="btn btn-primary">百宝囊</button>`);
+        }
+        if (hasQianKunDai) {
+            secondRowButtons.push(`<button id="btn-qiankundai" class="btn btn-primary">乾坤袋</button>`);
+        }
+        const secondRow = secondRowButtons.length > 0
+            ? `<div class="btn-group item-actions three-col">
+                ${secondRowButtons.join("\n")}
+               </div>`
+            : "";
+
         container.innerHTML = `
             <div class="personal-info">
                 <div class="info-header">
@@ -175,6 +293,7 @@ export async function renderPersonalInfo(container: HTMLElement): Promise<void> 
                     <button id="btn-backpack" class="btn btn-primary">背包物品</button>
                     <button id="btn-pets" class="btn btn-primary">宠物</button>
                 </div>
+                ${secondRow}
                 <table class="table table-bordered info-table two-col">
                     <tbody>
                         <tr>
@@ -239,6 +358,30 @@ export async function renderPersonalInfo(container: HTMLElement): Promise<void> 
                 showModal("宠物", `<p class="error">${e.message}</p>`);
             }
         });
+
+        if (hasBaoNang) {
+            document.getElementById("btn-baobaonang")!.addEventListener("click", async () => {
+                showModal("百宝囊", "<p>加载中...</p>");
+                try {
+                    const bags = await userApi.baobaonang(baoNangIds);
+                    showModal("百宝囊", renderBaoBaoNangTable(bags));
+                } catch (e: any) {
+                    showModal("百宝囊", `<p class="error">${e.message}</p>`);
+                }
+            });
+        }
+
+        if (hasQianKunDai) {
+            document.getElementById("btn-qiankundai")!.addEventListener("click", async () => {
+                showModal("乾坤袋", "<p>加载中...</p>");
+                try {
+                    const bags = await userApi.qiankundai(qianKunDaiIds);
+                    showModal("乾坤袋", renderQianKunDaiTable(bags));
+                } catch (e: any) {
+                    showModal("乾坤袋", `<p class="error">${e.message}</p>`);
+                }
+            });
+        }
     } catch (e: any) {
         container.innerHTML = `<p class="error">${e.message}</p>`;
     }

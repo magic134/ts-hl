@@ -10,7 +10,7 @@ export interface FindUserRankReq {
  * 人物排行榜查询服务
  */
 export class UserRankService {
-    async findRank(req: FindUserRankReq): Promise<UserVo[]> {
+    async findRank(req: FindUserRankReq, sourceDb?: DbClient): Promise<UserVo[]> {
         const rankType = req.rankType || "0";
         const mapping = RANK_TYPE_MAP[rankType];
         if (!mapping) {
@@ -18,8 +18,11 @@ export class UserRankService {
         }
         const sortColumn = mapping.column;
 
-        const db = new DbClient();
-        await db.connect();
+        const db = sourceDb || new DbClient();
+        const shouldClose = !sourceDb;
+        if (shouldClose) {
+            await db.connect();
+        }
         try {
             const sql = `
                 SELECT u.*, a.ip_mask AS qq
@@ -31,7 +34,9 @@ export class UserRankService {
             const rows = await db.query(sql, []);
             return rows.map((r: any) => this.toUserVo(r));
         } finally {
-            await db.close();
+            if (shouldClose) {
+                await db.close();
+            }
         }
     }
 

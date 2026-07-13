@@ -4,12 +4,12 @@ id_map yx_map表id
 
 type 类型
     1: 宠物店 id_map 就是yx_map的宠物店id
-    2：百宝囊/房子的储物柜 存物品的  id_map 就是 yx_playernpc房子npc的id
+    2：房子的储物柜 存物品的  id_map 就是 yx_playernpc房子npc的id
     3：乾坤袋/帮派驯兽师 存宠物的
     4：当铺 id_map 就是yx_npc的当铺小二id
-    5：存宠物的
-    6：房子的储物柜
+    5：乾坤袋 存宠物的
+    6：百宝囊 存物品的 id_user = 1+N个0+user.id+2位序号
 item0-7 存储的物品id
- 如果type=1 或者 type=5，item0-7存储的是 yx_pet表id
+ 如果type=6 或者 type=5，item0-7存储的是 yx_useritem表id， yx_pet表id，
 
  

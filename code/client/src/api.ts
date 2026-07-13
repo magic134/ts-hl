@@ -8,7 +8,9 @@ import type {
     UserVo,
     EquippedItem,
     BackpackItem,
-    UserPet
+    UserPet,
+    BaoBaoNangBag,
+    QianKunDaiBag
 } from "./types/api";
 
 const BASE = "/api";
@@ -77,6 +79,18 @@ export const userApi = {
         return request<UserPet[]>("/user/pets", {
             method: "POST",
             body: JSON.stringify({ user_id })
+        });
+    },
+    baobaonang(item_ids: number[]) {
+        return request<BaoBaoNangBag[]>("/user/baobaonang", {
+            method: "POST",
+            body: JSON.stringify({ item_ids })
+        });
+    },
+    qiankundai(item_ids: number[]) {
+        return request<QianKunDaiBag[]>("/user/qiankundai", {
+            method: "POST",
+            body: JSON.stringify({ item_ids })
         });
     }
 };

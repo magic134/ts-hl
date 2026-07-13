@@ -2,6 +2,8 @@ import { Router } from "express";
 import { authMiddleware, AuthRequest } from "../middleware/auth";
 import { UserItemService } from "../services/UserItemService";
 import { UserPetService } from "../services/UserPetService";
+import { BaoBaoNangService } from "../services/BaoBaoNangService";
+import { QianKunDaiService } from "../services/QianKunDaiService";
 import { SnapshotUserInfoService } from "../services/SnapshotUserInfoService";
 import { SnapshotUserRankService } from "../services/SnapshotUserRankService";
 import { SnapshotUserLeaderboardService } from "../services/SnapshotUserLeaderboardService";
@@ -13,6 +15,8 @@ const snapshotUserInfoService = new SnapshotUserInfoService();
 const snapshotUserLeaderboardService = new SnapshotUserLeaderboardService();
 const userItemService = new UserItemService();
 const userPetService = new UserPetService();
+const baoBaoNangService = new BaoBaoNangService();
+const qianKunDaiService = new QianKunDaiService();
 
 /**
  * POST /user/findRank
@@ -91,6 +95,34 @@ router.post("/pets", authMiddleware, async (req: AuthRequest, res) => {
     try {
         const { user_id } = req.body || {};
         const data = await userPetService.findPets(Number(user_id));
+        res.json(success(data));
+    } catch (e: any) {
+        res.json(fail(1, e.message));
+    }
+});
+
+/**
+ * POST /user/baobaonang
+ * 查询百宝囊内物品
+ */
+router.post("/baobaonang", authMiddleware, async (req: AuthRequest, res) => {
+    try {
+        const { item_ids } = req.body || {};
+        const data = await baoBaoNangService.getItems(item_ids);
+        res.json(success(data));
+    } catch (e: any) {
+        res.json(fail(1, e.message));
+    }
+});
+
+/**
+ * POST /user/qiankundai
+ * 查询乾坤袋内宠物
+ */
+router.post("/qiankundai", authMiddleware, async (req: AuthRequest, res) => {
+    try {
+        const { item_ids } = req.body || {};
+        const data = await qianKunDaiService.getPets(item_ids);
         res.json(success(data));
     } catch (e: any) {
         res.json(fail(1, e.message));

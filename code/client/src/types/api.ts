@@ -178,3 +178,25 @@ export interface MResponse<T> {
     data: T;
     msg: string;
 }
+
+export interface QianKunDaiPetSlot {
+    slot: number;
+    pet: any | null;
+}
+
+export interface QianKunDaiBag {
+    bagId: number;
+    itemId: number;
+    items: QianKunDaiPetSlot[];
+}
+
+export interface BaoBaoNangItemSlot {
+    slot: number;
+    item: any | null;
+}
+
+export interface BaoBaoNangBag {
+    bagId: number;
+    itemId: number;
+    items: BaoBaoNangItemSlot[];
+}

@@ -20,9 +20,12 @@ export interface PetLeaderboardRow {
  * 宠物类型通过 yx_pet.class 关联 yx_monster.class，显示 yx_monster.name
  */
 export class PetLeaderboardService {
-    async findLeaderboard(type: PetLeaderboardType): Promise<PetLeaderboardRow[]> {
-        const db = new DbClient();
-        await db.connect();
+    async findLeaderboard(type: PetLeaderboardType, sourceDb?: DbClient): Promise<PetLeaderboardRow[]> {
+        const db = sourceDb || new DbClient();
+        const shouldClose = !sourceDb;
+        if (shouldClose) {
+            await db.connect();
+        }
         try {
             const classFilter = type === "nonEvolution"
                 ? "FLOOR(p.class / 10000) = 7"
@@ -65,7 +68,9 @@ export class PetLeaderboardService {
                 generation: Math.floor(r.generation || 0)
             }));
         } finally {
-            await db.close();
+            if (shouldClose) {
+                await db.close();
+            }
         }
     }
 }

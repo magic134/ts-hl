@@ -20,9 +20,12 @@ export interface UserLeaderboardRow {
  * 人物排行榜服务（对应 doc/WWW不加密 的 index.php / userdeed.php / usermoney.php）
  */
 export class UserLeaderboardService {
-    async findLeaderboard(type: UserLeaderboardType): Promise<UserLeaderboardRow[]> {
-        const db = new DbClient();
-        await db.connect();
+    async findLeaderboard(type: UserLeaderboardType, sourceDb?: DbClient): Promise<UserLeaderboardRow[]> {
+        const db = sourceDb || new DbClient();
+        const shouldClose = !sourceDb;
+        if (shouldClose) {
+            await db.connect();
+        }
         try {
             let sql = "";
             switch (type) {
@@ -95,7 +98,9 @@ export class UserLeaderboardService {
                 total_money: type === "money" ? r.total_money : undefined
             }));
         } finally {
-            await db.close();
+            if (shouldClose) {
+                await db.close();
+            }
         }
     }
 }

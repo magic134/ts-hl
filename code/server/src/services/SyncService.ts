@@ -45,6 +45,8 @@ export class SyncService {
      * 同步排行榜快照
      */
     async syncLeaderboards(): Promise<void> {
+        const sourceDb = new DbClient();
+        await sourceDb.connect();
         const targetDb = new TargetDbClient();
         await targetDb.connect();
         const snapshotTime = Math.floor(Date.now() / 1000);
@@ -54,7 +56,7 @@ export class SyncService {
             const userRankRows: Record<string, any>[] = [];
             for (const rankType of Object.keys(RANK_TYPE_MAP)) {
                 const mapping = RANK_TYPE_MAP[rankType];
-                const rows = await this.userRankService.findRank({ rankType });
+                const rows = await this.userRankService.findRank({ rankType }, sourceDb);
                 rows.forEach((r, idx) => {
                     userRankRows.push({
                         rank_type: rankType,
@@ -90,7 +92,7 @@ export class SyncService {
             await targetDb.query("TRUNCATE TABLE sync_user_leaderboard");
             const userLeaderboardRows: Record<string, any>[] = [];
             for (const type of ["hongli", "deed", "money"] as const) {
-                const rows = await this.userLeaderboardService.findLeaderboard(type);
+                const rows = await this.userLeaderboardService.findLeaderboard(type, sourceDb);
                 rows.forEach(r => {
                     userLeaderboardRows.push({
                         type,
@@ -121,7 +123,7 @@ export class SyncService {
                 const rows = await this.petRankService.findPetRank({
                     catena: filter.catena,
                     isEvolution: filter.isEvolution
-                });
+                }, sourceDb);
                 rows.forEach((r, idx) => {
                     petRankRows.push({
                         filter_catena: filter.catena || "",
@@ -158,7 +160,7 @@ export class SyncService {
             await targetDb.query("TRUNCATE TABLE sync_pet_leaderboard");
             const petLeaderboardRows: Record<string, any>[] = [];
             for (const type of ["all", "nonEvolution"] as const) {
-                const rows = await this.petLeaderboardService.findLeaderboard(type);
+                const rows = await this.petLeaderboardService.findLeaderboard(type, sourceDb);
                 rows.forEach(r => {
                     petLeaderboardRows.push({
                         type,
@@ -182,6 +184,7 @@ export class SyncService {
             console.log(`[SyncService] 排行榜同步完成，写入 ${userRankRows.length + userLeaderboardRows.length + petRankRows.length + petLeaderboardRows.length} 行`);
         } finally {
             await targetDb.close();
+            await sourceDb.close();
         }
     }
 
