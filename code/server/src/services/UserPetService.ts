@@ -1,5 +1,6 @@
 import { DbClient } from "../dbClient/DbClient";
 import { YxPetData } from "../db/YxPet";
+import { getQuery } from "../utils/query";
 
 export interface UserPet extends YxPetData {
     isActive: boolean;
@@ -16,15 +17,7 @@ export class UserPetService {
         const db = new DbClient();
         await db.connect();
         try {
-            const sql = `
-                SELECT
-                    p.*,
-                    CASE WHEN p.id = u.petused_id THEN 1 ELSE 0 END AS is_active
-                FROM yx_user u, yx_pet p
-                WHERE u.id = ?
-                  AND p.id IN (u.pet0_id, u.pet1_id, u.pet2_id, u.pet3_id, u.pet4_id)
-                ORDER BY p.id
-            `;
+            const sql = getQuery("USER_PET_FIND_PETS");
             const rows = await db.query(sql, [userId]);
             return rows.map((r: any) => ({
                 id: r.id,

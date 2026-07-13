@@ -1,4 +1,5 @@
 import { DbClient } from "../dbClient/DbClient";
+import { formatQuery } from "../utils/query";
 
 export interface BaoBaoNangItemSlot {
     slot: number;
@@ -28,10 +29,8 @@ export class BaoBaoNangService {
         try {
             // 1. 查询百宝囊 storage 记录
             const placeholders = itemIds.map(() => "?").join(", ");
-            const storageRows = await db.query(
-                `SELECT * FROM yx_storage WHERE id_user IN (${placeholders}) AND type = 6`,
-                itemIds
-            );
+            const storageSql = formatQuery("BAOBAONANG_FIND_STORAGE", { placeholders });
+            const storageRows = await db.query(storageSql, [...itemIds, 6]);
 
             if (storageRows.length === 0) {
                 return [];
@@ -53,10 +52,8 @@ export class BaoBaoNangService {
             if (userItemIdSet.size > 0) {
                 const userItemIds = Array.from(userItemIdSet);
                 const userItemPlaceholders = userItemIds.map(() => "?").join(", ");
-                const userItemRows = await db.query(
-                    `SELECT * FROM yx_useritem WHERE id IN (${userItemPlaceholders})`,
-                    userItemIds
-                );
+                const userItemSql = formatQuery("BAOBAONANG_FIND_USERITEMS", { placeholders: userItemPlaceholders });
+                const userItemRows = await db.query(userItemSql, userItemIds);
                 for (const r of userItemRows) {
                     userItemMap.set(Number(r.id), r);
                 }

@@ -1,5 +1,6 @@
 import { TargetDbClient } from "../dbClient/TargetDbClient";
 import { UserVo } from "../types/api";
+import { getQuery } from "../utils/query";
 
 /**
  * 个人信息快照查询服务
@@ -10,10 +11,7 @@ export class SnapshotUserInfoService {
         const db = new TargetDbClient();
         await db.connect();
         try {
-            const rows = await db.query(
-                "SELECT * FROM sync_user_full WHERE id = ? ORDER BY snapshot_time DESC LIMIT 1",
-                [userId]
-            );
+            const rows = await db.query(getQuery("SNAPSHOT_USER_INFO_FIND"), [userId]);
             if (rows.length === 0) {
                 throw new Error("用户快照不存在");
             }

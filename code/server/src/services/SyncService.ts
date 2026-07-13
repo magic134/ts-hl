@@ -5,6 +5,7 @@ import { UserLeaderboardService } from "./UserLeaderboardService";
 import { PetRankService } from "./PetRankService";
 import { PetLeaderboardService } from "./PetLeaderboardService";
 import { RANK_TYPE_MAP, PET_RANK_FILTERS } from "../config";
+import { getQuery } from "../utils/query";
 
 interface BulkInsertResult {
     sql: string;
@@ -52,7 +53,7 @@ export class SyncService {
         const snapshotTime = Math.floor(Date.now() / 1000);
         try {
             // 1. 人物通用排行榜（findRank）
-            await targetDb.query("TRUNCATE TABLE sync_user_rank");
+            await targetDb.query(getQuery("SYNC_USER_RANK_TRUNCATE"));
             const userRankRows: Record<string, any>[] = [];
             for (const rankType of Object.keys(RANK_TYPE_MAP)) {
                 const mapping = RANK_TYPE_MAP[rankType];
@@ -89,7 +90,7 @@ export class SyncService {
             }
 
             // 2. 人物红利榜 / 功德榜 / 幻币榜（leaderboard）
-            await targetDb.query("TRUNCATE TABLE sync_user_leaderboard");
+            await targetDb.query(getQuery("SYNC_USER_LEADERBOARD_TRUNCATE"));
             const userLeaderboardRows: Record<string, any>[] = [];
             for (const type of ["hongli", "deed", "money"] as const) {
                 const rows = await this.userLeaderboardService.findLeaderboard(type, sourceDb);
@@ -117,7 +118,7 @@ export class SyncService {
             }
 
             // 3. 宠物等级排行榜（findPetRank，多组过滤）
-            await targetDb.query("TRUNCATE TABLE sync_pet_rank");
+            await targetDb.query(getQuery("SYNC_PET_RANK_TRUNCATE"));
             const petRankRows: Record<string, any>[] = [];
             for (const filter of PET_RANK_FILTERS) {
                 const rows = await this.petRankService.findPetRank({
@@ -157,7 +158,7 @@ export class SyncService {
             }
 
             // 4. 宠物总榜 / 不可进化宠榜（leaderboard）
-            await targetDb.query("TRUNCATE TABLE sync_pet_leaderboard");
+            await targetDb.query(getQuery("SYNC_PET_LEADERBOARD_TRUNCATE"));
             const petLeaderboardRows: Record<string, any>[] = [];
             for (const type of ["all", "nonEvolution"] as const) {
                 const rows = await this.petLeaderboardService.findLeaderboard(type, sourceDb);
@@ -196,7 +197,7 @@ export class SyncService {
         await sourceDb.connect();
         let users: any[] = [];
         try {
-            users = await sourceDb.query("SELECT * FROM yx_user", []);
+            users = await sourceDb.query(getQuery("SYNC_USER_FULL_SELECT"), []);
         } finally {
             await sourceDb.close();
         }
@@ -205,7 +206,7 @@ export class SyncService {
         await targetDb.connect();
         const snapshotTime = Math.floor(Date.now() / 1000);
         try {
-            await targetDb.query("DELETE FROM sync_user_full");
+            await targetDb.query(getQuery("SYNC_USER_FULL_DELETE"));
 
             const rows = users.map(u => ({
                 ...u,

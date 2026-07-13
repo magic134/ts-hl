@@ -1,6 +1,7 @@
 import { DbClient } from "../dbClient/DbClient";
 import { PetRankBean } from "../types/api";
 import { PROP_MAP } from "../config";
+import { formatQuery } from "../utils/query";
 
 export interface FindPetRankReq {
     catena: string;
@@ -32,30 +33,7 @@ export class PetRankService {
                 where.push(req.isEvolution === "1" ? "p.generation > 0" : "p.generation = 0");
             }
             const whereSql = where.length ? `WHERE ${where.join(" AND ")}` : "";
-            const sql = `
-                SELECT
-                    p.id,
-                    u.name AS owner_name,
-                    p.name AS pet_origin_name,
-                    p.name AS pet_name,
-                    p.grow_rate,
-                    p.grow_rate AS grow_point,
-                    p.level,
-                    p.attack,
-                    p.defence,
-                    p.dexterity,
-                    p.life,
-                    p.generation,
-                    p.medal_attack,
-                    p.medal_defence,
-                    p.medal_dexterity,
-                    p.treasure_id
-                FROM yx_pet p
-                LEFT JOIN yx_user u ON p.owner_id = u.id
-                ${whereSql}
-                ORDER BY p.level DESC, p.grow_rate DESC
-                LIMIT 100
-            `;
+            const sql = formatQuery("PET_RANK_FIND", { whereSql });
             const rows = await db.query(sql, params);
             return rows.map((r: any) => ({
                 ...r,

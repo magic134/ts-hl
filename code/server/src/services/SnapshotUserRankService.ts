@@ -1,5 +1,6 @@
 import { TargetDbClient } from "../dbClient/TargetDbClient";
 import { UserVo } from "../types/api";
+import { getQuery } from "../utils/query";
 
 export interface FindUserRankReq {
     rankType: string;
@@ -15,10 +16,7 @@ export class SnapshotUserRankService {
         const db = new TargetDbClient();
         await db.connect();
         try {
-            const rows = await db.query(
-                "SELECT * FROM sync_user_rank WHERE rank_type = ? ORDER BY rank ASC",
-                [rankType]
-            );
+            const rows = await db.query(getQuery("SNAPSHOT_USER_RANK_FIND"), [rankType]);
             return rows.map((r: any) => this.toUserVo(r));
         } finally {
             await db.close();

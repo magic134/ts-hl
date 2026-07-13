@@ -1,6 +1,7 @@
 import { DbClient } from "../dbClient/DbClient";
 import { UserVo } from "../types/api";
 import { RANK_TYPE_MAP } from "../config";
+import { formatQuery } from "../utils/query";
 
 export interface FindUserRankReq {
     rankType: string;
@@ -24,13 +25,7 @@ export class UserRankService {
             await db.connect();
         }
         try {
-            const sql = `
-                SELECT u.*, a.ip_mask AS qq
-                FROM yx_user u
-                LEFT JOIN account a ON u.account_id = a.id
-                ORDER BY u.${sortColumn} DESC
-                LIMIT 100
-            `;
+            const sql = formatQuery("USER_RANK_FIND", { sortColumn });
             const rows = await db.query(sql, []);
             return rows.map((r: any) => this.toUserVo(r));
         } finally {

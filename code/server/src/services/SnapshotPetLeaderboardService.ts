@@ -1,5 +1,6 @@
 import { TargetDbClient } from "../dbClient/TargetDbClient";
 import { PetLeaderboardRow } from "./PetLeaderboardService";
+import { getQuery } from "../utils/query";
 
 export type SnapshotPetLeaderboardType = "all" | "nonEvolution";
 
@@ -12,10 +13,7 @@ export class SnapshotPetLeaderboardService {
         const db = new TargetDbClient();
         await db.connect();
         try {
-            const rows = await db.query(
-                "SELECT * FROM sync_pet_leaderboard WHERE type = ? ORDER BY rank ASC",
-                [type]
-            );
+            const rows = await db.query(getQuery("SNAPSHOT_PET_LEADERBOARD_FIND"), [type]);
             return rows.map((r: any) => ({
                 rank: r.rank,
                 owner_name: r.owner_name || "",

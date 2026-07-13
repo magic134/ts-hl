@@ -1,4 +1,5 @@
 import { DbClient } from "../dbClient/DbClient";
+import { formatQuery } from "../utils/query";
 
 export type PetLeaderboardType = "all" | "nonEvolution";
 
@@ -31,30 +32,7 @@ export class PetLeaderboardService {
                 ? "FLOOR(p.class / 10000) = 7"
                 : "FLOOR(p.class / 10000) != 7";
 
-            const sql = `
-                SELECT
-                    p.class,
-                    p.name AS pet_name,
-                    p.attack,
-                    p.defence,
-                    p.dexterity,
-                    p.base_attack,
-                    p.base_defence,
-                    p.base_dexterity,
-                    FLOOR(p.generation) AS generation,
-                    p.grow_rate,
-                    FLOOR(p.level) AS level,
-                    p.max_life,
-                    (p.attack + p.defence + p.dexterity - p.base_attack - p.base_defence - p.base_dexterity) / (p.level - 1) AS grow,
-                    u.name AS owner_name,
-                    m.name AS monster_name
-                FROM yx_pet p
-                LEFT JOIN yx_user u ON p.owner_id = u.id
-                LEFT JOIN yx_monster m ON p.class = m.class
-                WHERE p.level > 1 AND ${classFilter}
-                ORDER BY grow DESC
-                LIMIT 100
-            `;
+            const sql = formatQuery("PET_LEADERBOARD_FIND", { classFilter });
 
             const rows = await db.query(sql, []);
             return rows.map((r: any, idx: number) => ({

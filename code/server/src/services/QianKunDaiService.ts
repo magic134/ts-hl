@@ -1,4 +1,5 @@
 import { DbClient } from "../dbClient/DbClient";
+import { formatQuery } from "../utils/query";
 
 export interface QianKunDaiPetSlot {
     slot: number;
@@ -27,10 +28,8 @@ export class QianKunDaiService {
         await db.connect();
         try {
             const placeholders = itemIds.map(() => "?").join(", ");
-            const storageRows = await db.query(
-                `SELECT * FROM yx_storage WHERE id_user IN (${placeholders}) AND type = 5`,
-                itemIds
-            );
+            const storageSql = formatQuery("QIANKUNDAI_FIND_STORAGE", { placeholders });
+            const storageRows = await db.query(storageSql, [...itemIds, 5]);
 
             if (storageRows.length === 0) {
                 return [];
@@ -50,10 +49,8 @@ export class QianKunDaiService {
             if (petIdSet.size > 0) {
                 const petIds = Array.from(petIdSet);
                 const petPlaceholders = petIds.map(() => "?").join(", ");
-                const petRows = await db.query(
-                    `SELECT * FROM yx_pet WHERE id IN (${petPlaceholders})`,
-                    petIds
-                );
+                const petSql = formatQuery("QIANKUNDAI_FIND_PETS", { placeholders: petPlaceholders });
+                const petRows = await db.query(petSql, petIds);
                 for (const r of petRows) {
                     petMap.set(Number(r.id), r);
                 }

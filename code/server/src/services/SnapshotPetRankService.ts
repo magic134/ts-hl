@@ -1,6 +1,7 @@
 import { TargetDbClient } from "../dbClient/TargetDbClient";
 import { PetRankBean } from "../types/api";
 import { PROP_MAP } from "../config";
+import { getQuery } from "../utils/query";
 
 export interface FindPetRankReq {
     catena: string;
@@ -16,10 +17,7 @@ export class SnapshotPetRankService {
         const db = new TargetDbClient();
         await db.connect();
         try {
-            const rows = await db.query(
-                "SELECT * FROM sync_pet_rank WHERE filter_catena = ? AND filter_is_evolution = ? ORDER BY rank ASC",
-                [req.catena || "", req.isEvolution || ""]
-            );
+            const rows = await db.query(getQuery("SNAPSHOT_PET_RANK_FIND"), [req.catena || "", req.isEvolution || ""]);
             return rows.map((r: any) => ({
                 ...r,
                 id: r.pet_id || 0,

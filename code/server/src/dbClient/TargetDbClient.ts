@@ -1,4 +1,5 @@
 import mysql from 'mysql';
+import { formatQuery } from "../utils/query";
 
 // 目标数据库配置（同步写入用），请根据实际环境修改
 const TARGET_DB_CONFIG = {
@@ -53,7 +54,7 @@ export class TargetDbClient {
 
     // ------------------------------ 通用 CRUD 方法 ------------------------------
     async find<T>(table: string, condition?: Partial<T>): Promise<T[]> {
-        let sql = `SELECT * FROM ${table}`;
+        let sql = formatQuery("DB_FIND", { table });
         const params: any[] = [];
 
         if (condition) {
@@ -78,7 +79,7 @@ export class TargetDbClient {
     async create<T>(table: string, data: Omit<T, 'id'>): Promise<number> {
         const keys = Object.keys(data);
         const placeholders = keys.map(() => '?').join(', ');
-        const sql = `INSERT INTO ${table} (${keys.join(', ')}) VALUES (${placeholders})`;
+        const sql = formatQuery("DB_CREATE", { table, columns: keys.join(', '), placeholders });
         const params = Object.values(data);
         return new Promise((resolve, reject) => {
             this.connection.query(sql, params, (err, result: mysql.OkPacket) => {
@@ -94,7 +95,7 @@ export class TargetDbClient {
     async update<T>(table: string, data: Partial<Omit<T, 'id'>>, condition: Partial<T>): Promise<number> {
         const setStr = Object.keys(data).map(key => `${key} = ?`).join(', ');
         const whereStr = Object.keys(condition).map(key => `${key} = ?`).join(' AND ');
-        const sql = `UPDATE ${table} SET ${setStr} WHERE ${whereStr}`;
+        const sql = formatQuery("DB_UPDATE", { table, set: setStr, where: whereStr });
 
         const dataParams = Object.values(data);
         const conditionParams = Object.values(condition);
@@ -113,7 +114,7 @@ export class TargetDbClient {
 
     async delete<T>(table: string, condition: Partial<T>): Promise<number> {
         const whereStr = Object.keys(condition).map(key => `${key} = ?`).join(' AND ');
-        const sql = `DELETE FROM ${table} WHERE ${whereStr}`;
+        const sql = formatQuery("DB_DELETE", { table, where: whereStr });
         const params = Object.values(condition);
 
         return new Promise((resolve, reject) => {

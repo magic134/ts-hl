@@ -5,6 +5,7 @@ import { YxUser, YxUserData } from "../db/YxUser";
 import { YxPet, YxPetData } from "../db/YxPet";
 import { ReqLogin, ReqRegister, ReqUser, UserVo } from "../types/api";
 import { JWT_SECRET } from "../config";
+import { getQuery } from "../utils/query";
 import { UserRankService } from "./UserRankService";
 
 /**
@@ -104,7 +105,7 @@ export class AuthService {
     }
 
     private async fetchQQ(db: DbClient, accountId: number): Promise<string> {
-        const rows = await db.query("SELECT ip_mask FROM account WHERE id = ?", [accountId]);
+        const rows = await db.query(getQuery("AUTH_FETCH_QQ"), [accountId]);
         return rows[0]?.ip_mask || "";
     }
 }

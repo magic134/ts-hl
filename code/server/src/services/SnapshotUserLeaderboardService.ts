@@ -1,5 +1,6 @@
 import { TargetDbClient } from "../dbClient/TargetDbClient";
 import { UserLeaderboardRow } from "./UserLeaderboardService";
+import { getQuery } from "../utils/query";
 
 export type SnapshotUserLeaderboardType = "hongli" | "deed" | "money";
 
@@ -12,10 +13,7 @@ export class SnapshotUserLeaderboardService {
         const db = new TargetDbClient();
         await db.connect();
         try {
-            const rows = await db.query(
-                "SELECT * FROM sync_user_leaderboard WHERE type = ? ORDER BY rank ASC",
-                [type]
-            );
+            const rows = await db.query(getQuery("SNAPSHOT_USER_LEADERBOARD_FIND"), [type]);
             return rows.map((r: any) => ({
                 rank: r.rank,
                 name: r.name || "",

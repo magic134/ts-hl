@@ -1,4 +1,5 @@
 import { DbClient } from "../dbClient/DbClient";
+import { getQuery } from "../utils/query";
 
 export type UserLeaderboardType = "hongli" | "deed" | "money";
 
@@ -30,58 +31,13 @@ export class UserLeaderboardService {
             let sql = "";
             switch (type) {
                 case "hongli":
-                    sql = `
-                        SELECT
-                            name,
-                            FLOOR(level) AS level,
-                            metempsychosis,
-                            look,
-                            degree_lev,
-                            money,
-                            FLOOR((metempsychosis % 1000) / 10) AS toutai,
-                            FLOOR(additional_point / 100000) AS hongli
-                        FROM yx_user
-                        WHERE account_id BETWEEN 1 AND 9999
-                        ORDER BY hongli DESC, degree_lev DESC
-                        LIMIT 100
-                    `;
+                    sql = getQuery("USER_LEADERBOARD_FIND_HONGLI");
                     break;
                 case "deed":
-                    sql = `
-                        SELECT
-                            name,
-                            FLOOR(level) AS level,
-                            metempsychosis,
-                            look,
-                            degree_lev,
-                            deed,
-                            money,
-                            FLOOR((metempsychosis % 1000) / 10) AS toutai,
-                            FLOOR(additional_point / 100000) AS hongli
-                        FROM yx_user
-                        WHERE account_id BETWEEN 1 AND 9999
-                        ORDER BY deed DESC
-                        LIMIT 100
-                    `;
+                    sql = getQuery("USER_LEADERBOARD_FIND_DEED");
                     break;
                 case "money":
-                    sql = `
-                        SELECT
-                            name,
-                            FLOOR(level) AS level,
-                            metempsychosis,
-                            look,
-                            degree_lev,
-                            money,
-                            money_saved,
-                            (money + money_saved) AS total_money,
-                            FLOOR((metempsychosis % 1000) / 10) AS toutai,
-                            FLOOR(additional_point / 100000) AS hongli
-                        FROM yx_user
-                        WHERE account_id BETWEEN 1 AND 9999
-                        ORDER BY total_money DESC
-                        LIMIT 100
-                    `;
+                    sql = getQuery("USER_LEADERBOARD_FIND_MONEY");
                     break;
                 default:
                     throw new Error(`不支持的人物排行榜类型: ${type}`);

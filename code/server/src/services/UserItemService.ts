@@ -1,5 +1,6 @@
 import { DbClient } from "../dbClient/DbClient";
 import { YxItemData } from "../db/YxItem";
+import { getQuery } from "../utils/query";
 
 export interface EquippedItem extends YxItemData {
     slot: "weapon" | "armor" | "shoes" | "treasure0" | "treasure1";
@@ -23,21 +24,7 @@ export class UserItemService {
         const db = new DbClient();
         await db.connect();
         try {
-            const sql = `
-                SELECT
-                    i.*,
-                    CASE i.id
-                        WHEN u.weapon_id THEN 'weapon'
-                        WHEN u.armor_id THEN 'armor'
-                        WHEN u.shoes_id THEN 'shoes'
-                        WHEN u.treasure0_id THEN 'treasure0'
-                        WHEN u.treasure1_id THEN 'treasure1'
-                    END AS slot
-                FROM yx_item i, yx_user u
-                WHERE u.id = ?
-                  AND i.id IN (u.weapon_id, u.armor_id, u.shoes_id, u.treasure0_id, u.treasure1_id)
-                ORDER BY i.id
-            `;
+            const sql = getQuery("USER_ITEM_FIND_EQUIPPED");
             const rows = await db.query(sql, [userId]);
             return rows.map((r: any) => ({
                 id: r.id,
@@ -74,14 +61,7 @@ export class UserItemService {
         const db = new DbClient();
         await db.connect();
         try {
-            const sql = `
-                SELECT i.*
-                FROM yx_item i, yx_user u
-                WHERE u.id = ?
-                  AND TRIM(LEADING '0' FROM SUBSTRING(LEFT(i.id, LENGTH(i.id) - 2), 2)) + 0 = u.id
-                  AND i.id NOT IN (u.weapon_id, u.armor_id, u.shoes_id, u.treasure0_id, u.treasure1_id)
-                ORDER BY i.id
-            `;
+            const sql = getQuery("USER_ITEM_FIND_BACKPACK");
             const rows = await db.query(sql, [userId]);
             return rows.map((r: any) => ({
                 id: r.id,
