@@ -48,6 +48,78 @@ export const QUERIES: Record<string, QueryConfig> = {
         description: "根据槽位 id 列表查询 yx_pet 数据"
     },
 
+    // 当铺
+    DANGPU_FIND_STORAGE: {
+        sql: "SELECT * FROM yx_storage WHERE id_user = ? AND type = 4",
+        description: "根据 yx_user.id 查询当铺（type=4）storage 记录"
+    },
+    DANGPU_FIND_USERITEMS: {
+        sql: "SELECT * FROM yx_useritem WHERE id IN ({{placeholders}})",
+        description: "根据槽位 id 列表查询 yx_useritem 数据"
+    },
+
+    // 宠物店
+    PETSHOP_FIND_STORAGE: {
+        sql: "SELECT * FROM yx_storage WHERE id_user = ? AND type = 1",
+        description: "根据 yx_user.id 查询宠物店（type=1）storage 记录"
+    },
+    PETSHOP_FIND_PETS: {
+        sql: "SELECT * FROM yx_pet WHERE id IN ({{placeholders}})",
+        description: "根据槽位 id 列表查询 yx_pet 数据"
+    },
+
+    // 储物柜
+    CHUWUGUI_FIND_PLAYERNPC: {
+        sql: "SELECT id FROM yx_playernpc WHERE owner_id = ? AND type = 201",
+        description: "根据 yx_user.id 查询该玩家的储物柜房子 NPC id"
+    },
+    CHUWUGUI_FIND_STORAGE: {
+        sql: "SELECT * FROM yx_storage WHERE id_map IN ({{placeholders}}) AND type = 2",
+        description: "根据 yx_playernpc.id 列表查询储物柜（type=2）storage 记录"
+    },
+    CHUWUGUI_FIND_USERITEMS: {
+        sql: "SELECT * FROM yx_useritem WHERE id IN ({{placeholders}})",
+        description: "根据槽位 id 列表查询 yx_useritem 数据"
+    },
+
+    // 帮派
+    GANG_FIND_SYNMEMBER: {
+        sql: "SELECT owner_id FROM yx_synmember WHERE id = ? AND rank >= 90",
+        description: "根据 yx_user.id 查询其所属帮派且职位 rank >= 90"
+    },
+    GANG_CHECK_MEMBER: {
+        sql: "SELECT 1 FROM yx_synmember WHERE id = ? AND rank >= 90 LIMIT 1",
+        description: "判断玩家是否有所属帮派且职位 rank >= 90"
+    },
+
+    // 帮派箱子
+    GANG_XIANGZI_FIND_PLAYERNPC: {
+        sql: "SELECT id FROM yx_playernpc WHERE owner_id = ? AND type = 201",
+        description: "根据帮派 id 查询帮派箱子 NPC id"
+    },
+    GANG_XIANGZI_FIND_STORAGE: {
+        sql: "SELECT * FROM yx_storage WHERE id_map IN ({{placeholders}}) AND type = 2",
+        description: "根据帮派箱子 NPC id 列表查询 storage（type=2）记录"
+    },
+    GANG_XIANGZI_FIND_USERITEMS: {
+        sql: "SELECT * FROM yx_useritem WHERE id IN ({{placeholders}})",
+        description: "根据槽位 id 列表查询 yx_useritem 数据"
+    },
+
+    // 帮派驯兽师
+    GANG_XUNSHOUSHI_FIND_PLAYERNPC: {
+        sql: "SELECT id FROM yx_playernpc WHERE owner_id = ? AND type = 202",
+        description: "根据帮派 id 查询帮派驯兽师 NPC id"
+    },
+    GANG_XUNSHOUSHI_FIND_STORAGE: {
+        sql: "SELECT * FROM yx_storage WHERE id_map IN ({{placeholders}}) AND type = 3",
+        description: "根据帮派驯兽师 NPC id 列表查询 storage（type=3）记录"
+    },
+    GANG_XUNSHOUSHI_FIND_PETS: {
+        sql: "SELECT * FROM yx_pet WHERE id IN ({{placeholders}})",
+        description: "根据槽位 id 列表查询 yx_pet 数据"
+    },
+
     // 玩家物品
     USER_ITEM_FIND_EQUIPPED: {
         sql: `

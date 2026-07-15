@@ -179,6 +179,65 @@ export interface MResponse<T> {
     msg: string;
 }
 
+export interface PetShopPetSlot {
+    slot: number;
+    pet: any | null;
+}
+
+export interface PetShopBag {
+    bagId: number;
+    itemId: number;
+    items: PetShopPetSlot[];
+}
+
+export interface DangPuItemSlot {
+    slot: number;
+    item: any | null;
+}
+
+export interface DangPuBag {
+    bagId: number;
+    itemId: number;
+    items: DangPuItemSlot[];
+}
+
+export interface ChuWuGuiItemSlot {
+    slot: number;
+    item: any | null;
+}
+
+export interface ChuWuGuiBag {
+    bagId: number;
+    itemId: number;
+    items: ChuWuGuiItemSlot[];
+}
+
+export interface GangXiangZiItemSlot {
+    slot: number;
+    item: any | null;
+}
+
+export interface GangXiangZiBag {
+    bagId: number;
+    itemId: number;
+    items: GangXiangZiItemSlot[];
+}
+
+export interface GangXunShouShiPetSlot {
+    slot: number;
+    pet: any | null;
+}
+
+export interface GangXunShouShiBag {
+    bagId: number;
+    itemId: number;
+    items: GangXunShouShiPetSlot[];
+}
+
+export interface GangStatus {
+    hasGang: boolean;
+}
+
 export interface QianKunDaiPetSlot {
     slot: number;
     pet: any | null;

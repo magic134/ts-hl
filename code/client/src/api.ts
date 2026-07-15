@@ -10,7 +10,13 @@ import type {
     BackpackItem,
     UserPet,
     BaoBaoNangBag,
-    QianKunDaiBag
+    QianKunDaiBag,
+    DangPuBag,
+    ChuWuGuiBag,
+    GangXiangZiBag,
+    GangXunShouShiBag,
+    GangStatus,
+    PetShopBag
 } from "./types/api";
 
 const BASE = "/api";
@@ -91,6 +97,42 @@ export const userApi = {
         return request<QianKunDaiBag[]>("/user/qiankundai", {
             method: "POST",
             body: JSON.stringify({ item_ids })
+        });
+    },
+    dangpu(user_id: number) {
+        return request<DangPuBag[]>("/user/dangpu", {
+            method: "POST",
+            body: JSON.stringify({ user_id })
+        });
+    },
+    chuwugui(user_id: number) {
+        return request<ChuWuGuiBag[]>("/user/chuwugui", {
+            method: "POST",
+            body: JSON.stringify({ user_id })
+        });
+    },
+    gangstatus(user_id: number) {
+        return request<GangStatus>("/user/gangstatus", {
+            method: "POST",
+            body: JSON.stringify({ user_id })
+        });
+    },
+    gangxiangzi(user_id: number) {
+        return request<GangXiangZiBag[]>("/user/gangxiangzi", {
+            method: "POST",
+            body: JSON.stringify({ user_id })
+        });
+    },
+    gangxunshoushi(user_id: number) {
+        return request<GangXunShouShiBag[]>("/user/gangxunshoushi", {
+            method: "POST",
+            body: JSON.stringify({ user_id })
+        });
+    },
+    petshop(user_id: number) {
+        return request<PetShopBag[]>("/user/petshop", {
+            method: "POST",
+            body: JSON.stringify({ user_id })
         });
     }
 };

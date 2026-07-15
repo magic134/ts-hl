@@ -1,11 +1,16 @@
+# yx_storage 说明
+
 id 自增长
 id_user yx_user表id
 id_map yx_map表id
 
 type 类型
-    1: 宠物店 id_map 就是yx_map的宠物店id
-    2：房子的储物柜 存物品的  id_map 就是 yx_playernpc房子npc的id
-    3：乾坤袋/帮派驯兽师 存宠物的
+    1: 宠物店 id_map 就是yx_map的宠物店id，id_user=yx_user.id
+    2：房子/帮派的储物柜 存物品的  id_map 就是 yx_playernpc房子npc的id
+     * yx_playernpc type=201 就是储物柜，owner_id = yx_user.id
+     * yx_playernpc.id = yx_storage.id_map , yx_storage.type = 2
+     - 帮派箱子，type=2
+    3：帮派驯兽师 存宠物的
     4：当铺 id_map 就是yx_npc的当铺小二id
     5：乾坤袋 存宠物的
     6：百宝囊 存物品的 id_user = 1+N个0+user.id+2位序号
